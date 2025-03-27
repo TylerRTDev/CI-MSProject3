@@ -5,6 +5,8 @@ import os
 from dotenv import load_dotenv
 from bson import ObjectId
 from config import Config
+from bson.objectid import ObjectId
+
 
 app = Flask(__name__)
 # MongoDB Configuration
@@ -61,6 +63,51 @@ def add_word():
     new_word["_id"] = str(result.inserted_id)
 
     return jsonify(new_word), 201
+
+# Route: Delete words from MongoDB
+@app.route("/api/words/<word_id>", methods=["DELETE"])
+def delete_word(word_id):
+    try:
+        result = mongo.db.words.delete_one({"_id": ObjectId(word_id)})
+        
+        if result.deleted_count == 0:
+            return jsonify({"error": "Word not found"}), 404
+
+        return jsonify({"message": "Word deleted successfully"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+# Route: Update words from MongoDB
+@app.route("/api/words/<word_id>", methods=["PUT"])
+def update_word(word_id):
+    data = request.get_json()
+
+    if not data:
+        return jsonify({"error": "No input provided"}), 400
+
+    update_fields = {}
+
+    # Allow updates to any of these fields
+    for field in ["word", "language", "translations", "pronunciation", "category"]:
+        if field in data:
+            update_fields[field] = data[field]
+
+    if not update_fields:
+        return jsonify({"error": "No valid fields provided to update"}), 400
+
+    try:
+        result = mongo.db.words.update_one(
+            {"_id": ObjectId(word_id)},
+            {"$set": update_fields}
+        )
+
+        if result.matched_count == 0:
+            return jsonify({"error": "Word not found"}), 404
+
+        return jsonify({"message": "Word updated successfully"}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
 
 if __name__ == "__main__":
