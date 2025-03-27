@@ -16,10 +16,35 @@ CORS(app)  # Allow requests from frontend
 app.config.from_object(Config)
 mongo = PyMongo(app)
 
-# Route: Health Check
-@app.route("/", methods=["GET"])
-def home():
-    return jsonify({"message": "Welcome to the LingoLink API!"}), 200
+# Sample data to simulate MongoDB records
+sample_words = [
+    {
+        "_id": "1",
+        "word": "Hello",
+        "language": "English",
+        "translations": {
+            "Lithuanian": "Labas",
+            "Spanish": "Hola"
+        },
+        "pronunciation": "heh-lo"
+    },
+    {
+        "_id": "2",
+        "word": "Thank you",
+        "language": "English",
+        "translations": {
+            "Lithuanian": "Ačiū",
+            "French": "Merci"
+        },
+        "pronunciation": "ah-choo"
+    }
+]
+
+# Route: Get all words
+@app.route("/api/words", methods=["GET"])
+def get_words():
+    return jsonify(sample_words), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
+
