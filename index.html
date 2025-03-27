@@ -26,6 +26,22 @@
     <!-- Dashboard Page -->
     <section class="dashboard">
         <h2>Your Word Collection</h2>
+        <h3>Add a New Word</h3>
+            <form id="add-word-form">
+            <input type="text" id="word" placeholder="Word" required />
+            <input type="text" id="language" placeholder="Language" required />
+            <input type="text" id="pronunciation" placeholder="Pronunciation" />
+            <input type="text" id="category" placeholder="Category" />
+
+            <div id="translations-wrapper">
+                <div class="translation-pair">
+                    <input type="text" class="lang" placeholder="Language (e.g. Lithuanian)" required />
+                    <input type="text" class="trans" placeholder="Translation (e.g. Labas)" required />
+                </div>
+            </div>
+            <button type="button" class="cta-btn" onclick="addTranslationField()">+ Add Translation</button>
+            <button type="submit" class="cta-btn">Add Word</button>
+            </form>
     </section>
 
         <!-- Footer -->
