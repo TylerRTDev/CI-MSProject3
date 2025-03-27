@@ -109,6 +109,15 @@ def update_word(word_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+@app.route("/api/words/batch", methods=["POST"])
+def add_multiple_words():
+    data = request.get_json()
+    if not isinstance(data, list):
+        return jsonify({"error": "Expected a list of word objects"}), 400
+
+    inserted = mongo.db.words.insert_many(data)
+    return jsonify({"inserted_ids": [str(_id) for _id in inserted.inserted_ids]}), 201
+
 
 if __name__ == "__main__":
     app.run(debug=True)
