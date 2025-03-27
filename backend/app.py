@@ -3,6 +3,8 @@ from flask_pymongo import PyMongo
 from flask_cors import CORS
 import os
 from dotenv import load_dotenv
+from config import Config
+
 
 # Load environment variables from .env
 load_dotenv()
@@ -11,7 +13,7 @@ app = Flask(__name__)
 CORS(app)  # Allow requests from frontend
 
 # MongoDB Configuration
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.config.from_object(Config)
 mongo = PyMongo(app)
 
 # Route: Health Check
