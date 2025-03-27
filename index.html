@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="Tyler Kerr">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LingoLink</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="">
+    </head>
+    <body>
+    <header>
+        <h1>LingoLink</h1>
+    </header>
+    
+    <!-- Landing Page -->
+    <section class="landing">
+        <h1>Track & Learn Words Across Languages</h1>
+        <p>Grow your multilingual vocabulary with smart tracking, pronunciation, and translation support – all in one place.</p>
+        <button class="cta-btn" onclick="document.querySelector('.dashboard').scrollIntoView({behavior: 'smooth'})">Start Learning</button>
+    </section>
+    
+    <!-- Dashboard Page -->
+    <section class="dashboard">
+        <h2>Your Word Collection</h2>
+    
+        <div class="word-card">
+        <h3>Hello</h3>
+        <div class="translations">Lithuanian: Labas | Spanish: Hola</div>
+        <div class="translations">Pronunciation: heh-lo</div>
+        <div class="actions">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </div>
+        </div>
+    
+        <div class="word-card">
+        <h3>Thank you</h3>
+        <div class="translations">Lithuanian: Ačiū | French: Merci</div>
+        <div class="translations">Pronunciation: ah-choo</div>
+        <div class="actions">
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </div>
+        </div>
+    </section>
+    </body>
+</html>
