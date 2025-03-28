@@ -68,6 +68,40 @@ header h1 {
     color: var(--green);
 }
 
+.dashboard h3 {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#add-word-form {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+#add-word-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-word-form .cta-btn {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#translations-wrapper {
+    margin-bottom: 1rem;
+}
+
 .edit-status {
     display: none;
     margin-bottom: 1rem;
@@ -83,6 +117,30 @@ header h1 {
     border-radius: 5px;
 }
 
+#edit-word-form {
+    background-color: var(--white);
+    padding: 1rem;
+}
+
+#edit-word-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#edit-word-form .cta-btn {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#edit-translations-wrapper {
+    margin-bottom: 1rem;
+}  
+
 /* Modal backdrop */
 .modal {
     display: none; /* Hidden by default */
@@ -95,10 +153,10 @@ header h1 {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);
     padding-top: 60px;
-  }
-  
-  /* Modal box */
-  .modal-content {
+}
+
+/* Modal box */
+.modal-content {
     background-color: #fff;
     margin: auto;
     padding: 2rem;
@@ -130,8 +188,6 @@ margin-top: 1rem;
 background-color: var(--red);
 color: white;
 }
-
-
 
 .word-card {
     background-color: var(--white);
