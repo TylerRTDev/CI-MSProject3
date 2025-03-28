@@ -217,6 +217,28 @@ document.addEventListener("click", function (e) {
     }
 });
 
+
+function closeEditModal() {
+    document.getElementById("edit-modal").style.display = "none";
+    document.getElementById("edit-word-form").reset();
+    document.getElementById("edit-translations-wrapper").innerHTML = "";
+    document.getElementById("edit-word-id").value = "";
+}
+
+function addEditTranslationField(lang = "", trans = "") {
+    const wrapper = document.getElementById("edit-translations-wrapper");
+    const div = document.createElement("div");
+    div.classList.add("translation-pair");
+
+    div.innerHTML = `
+        <input type="text" class="lang" value="${lang}" placeholder="Language" required />
+        <input type="text" class="trans" value="${trans}" placeholder="Translation" required />
+        <button type="button" class="remove-btn">✖</button>
+    `;
+
+    wrapper.appendChild(div);
+}
+
 // Handle remove buttons inside modal
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("remove-btn")) {
