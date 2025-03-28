@@ -1,7 +1,10 @@
+const API_BASE = "https://lingolink-0jc6.onrender.com";
+
+
 // Fetch words from the Flask API and display them
 async function loadWords() {
 try {
-    const response = await fetch("http://127.0.0.1:5000/api/words");
+    const response = await fetch(`${API_BASE}/api/words`);
     const words = await response.json();
 
     const dashboard = document.querySelector(".dashboard");
@@ -41,7 +44,7 @@ if (e.target.classList.contains("delete-btn")) {
     const id = e.target.getAttribute("data-id");
 
     try {
-    const res = await fetch(`http://127.0.0.1:5000/api/words/${id}`, {
+    const res = await fetch(`${API_BASE}/api/words/${id}`, {
         method: "DELETE",
     });
 
@@ -141,8 +144,8 @@ try {
     const editId = document.getElementById("edit-id").value;
     const method = editId ? "PUT" : "POST";
     const url = editId
-    ? `http://127.0.0.1:5000/api/words/${editId}`
-    : "http://127.0.0.1:5000/api/words";
+    ? `${API_BASE}/api/words/${editId}`
+    : `${API_BASE}/api/words`;
 
 const res = await fetch(url, {
     method,
@@ -273,7 +276,7 @@ function handleEditSubmit(event) {
         translations,
     };
 
-    fetch(`http://127.0.0.1:5000/api/words/${id}`, {
+    fetch(`${API_BASE}/api/words/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedWord),
