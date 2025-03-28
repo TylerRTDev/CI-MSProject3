@@ -68,6 +68,22 @@ header h1 {
     color: var(--green);
 }
 
+.edit-status {
+    display: none;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--red);
+}
+
+  /* When form is in edit mode */
+.editing-form {
+    border: 2px solid var(--yellow);
+    background-color: #fffde7;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
 .word-card {
     background-color: var(--white);
     border-left: 6px solid var(--green);
