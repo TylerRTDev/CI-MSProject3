@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="Tyler Kerr">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LingoLink</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="">
+    </head>
+    <body>
+    <header>
+        <h1>LingoLink</h1>
+    </header>
+    
+    <!-- Landing Page -->
+    <section class="landing">
+        <h1>Track & Learn Words Across Languages</h1>
+        <p>Grow your multilingual vocabulary with smart tracking, pronunciation, and translation support – all in one place.</p>
+        <button class="cta-btn" onclick="document.querySelector('.dashboard').scrollIntoView({behavior: 'smooth'})">Start Learning</button>
+    </section>
+    
+    <!-- Dashboard Page -->
+    <section class="dashboard">
+        <h2>Your Word Collection</h2>
+        <h3>Add a New Word</h3>
+        <div id="edit-status" class="edit-status"></div>
+            <form id="add-word-form">
+                <input type="hidden" id="edit-id" value="">
+                <input type="text" id="word" placeholder="Word" required />
+                <input type="text" id="language" placeholder="Language" required />
+                <input type="text" id="pronunciation" placeholder="Pronunciation" />
+                <input type="text" id="category" placeholder="Category" />
+                <div id="translations-wrapper"></div>
+                <button type="button" class="cta-btn" onclick="addTranslationField()">+ Add Translation</button>
+                <button type="submit" class="cta-btn">Add Word</button>
+            </form>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61570549830925" target="_blank" rel="noopener"><img src="./resources/icons/facebook.svg" alt="Facebook"></a>
+        <a href="https://x.com/TylerRTDev" target="_blank" rel="noopener"><img src="./resources/icons/x-social.svg" alt="Twitter"></a>
+        <a href="https://www.instagram.com/tylerrtdev/" target="_blank" rel="noopener"><img src="./resources/icons/instagram.svg" alt="Instagram"></a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener"><img src="./resources/icons/youtube.svg" alt="YouTube"></a>
+        <a href="https://github.com/TylerRTDev" target="_blank" rel="noopener"><img src="./resources/icons/github-svgrepo-com.svg" alt="Git-Hub"></a>
+        </div>
+    </footer>
+    <script src="./scripts/scripts.js"></script>
+    </body>
+</html>
