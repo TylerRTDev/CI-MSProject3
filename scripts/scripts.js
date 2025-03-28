@@ -246,6 +246,58 @@ document.addEventListener("click", function (e) {
     }
 });
 
+// Handle modal form submission
+function handleEditSubmit(event) {
+    event.preventDefault();
+
+    const id = document.getElementById("edit-word-id").value;
+    const word = document.getElementById("edit-word").value.trim();
+    const language = document.getElementById("edit-language").value.trim();
+    const pronunciation = document.getElementById("edit-pronunciation").value.trim();
+    const category = document.getElementById("edit-category").value.trim();
+
+    let translations = {};
+    const langInputs = document.querySelectorAll("#edit-translations-wrapper .lang");
+    const transInputs = document.querySelectorAll("#edit-translations-wrapper .trans");
+
+    for (let i = 0; i < langInputs.length; i++) {
+        const lang = langInputs[i].value.trim();
+        const trans = transInputs[i].value.trim();
+        if (lang && trans) {
+            translations[lang] = trans;
+        }
+    }
+
+    if (!word || Object.keys(translations).length === 0) {
+        alert("Please fill out all required fields and add at least one translation.");
+        return;
+    }
+
+    const updatedWord = {
+        word,
+        language,
+        pronunciation,
+        category,
+        translations,
+    };
+
+    fetch(`http://127.0.0.1:5000/api/words/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedWord),
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("✅ Word updated successfully!");
+        closeEditModal();
+        window.location.reload();
+    })
+    .catch(err => {
+        console.error("Error updating word:", err);
+        alert("❌ Failed to update word.");
+    });
+}
+
 // Add one translation field by default when the page loads
 window.addEventListener("DOMContentLoaded", () => {
     loadWords();
