@@ -59,6 +59,15 @@ if (e.target.classList.contains("delete-btn")) {
 }
 });
 
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("remove-btn")) {
+    e.target.closest(".translation-pair").remove();
+    if (pair) {
+        pair.remove();
+    }
+}
+});
+
 document.getElementById("add-word-form").addEventListener("submit", async function (e) {
 e.preventDefault();
 
@@ -124,11 +133,14 @@ function addTranslationField() {
 div.innerHTML = `
     <input type="text" class="lang" placeholder="Language (e.g. French)" required />
     <input type="text" class="trans" placeholder="Translation (e.g. Bonjour)" required />
+    <button type="button" class="remove-btn">✖</button>
 `;
 
 wrapper.appendChild(div);
 }
 
-
-// Call the function on page load
-window.addEventListener("DOMContentLoaded", loadWords);
+// Add one translation field by default when the page loads
+window.addEventListener("DOMContentLoaded", () => {
+    loadWords();
+    addTranslationField();
+});
