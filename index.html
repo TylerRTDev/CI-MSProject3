@@ -39,6 +39,27 @@
             </form>
     </section>
 
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h3>Edit Word</h3>
+            <form id="edit-word-form">
+                <input type="hidden" id="edit-word-id" value="">
+                <input type="text" id="edit-word" placeholder="Word" required />
+                <input type="text" id="edit-language" placeholder="Language" required />
+                <input type="text" id="edit-pronunciation" placeholder="Pronunciation" />
+                <input type="text" id="edit-category" placeholder="Category" />
+                <div id="edit-translations-wrapper"></div>
+                <button type="button" class="cta-btn" onclick="addEditTranslationField()">+ Add Translation</button>
+                <div class="modal-actions">
+                    <button type="submit" class="cta-btn">Update Word</button>
+                    <button type="button" id="cancel-edit" class="cta-btn cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
         <!-- Footer -->
     <footer>
         <div class="social-icons">
