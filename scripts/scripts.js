@@ -217,6 +217,13 @@ document.addEventListener("click", function (e) {
     }
 });
 
+// Handle remove buttons inside modal
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("remove-btn")) {
+        e.target.closest(".translation-pair").remove();
+    }
+});
+
 // Add one translation field by default when the page loads
 window.addEventListener("DOMContentLoaded", () => {
     loadWords();
