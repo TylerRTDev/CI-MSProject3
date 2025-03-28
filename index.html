@@ -45,7 +45,7 @@
         <div class="modal-content">
             <span id="close-modal" class="close-btn">&times;</span>
             <h3>Edit Word</h3>
-            <form id="edit-word-form">
+            <form id="edit-word-form" onsubmit="return handleEditSubmit(event)">
                 <input type="hidden" id="edit-word-id" value="">
                 <input type="text" id="edit-word" placeholder="Word" required />
                 <input type="text" id="edit-language" placeholder="Language" required />

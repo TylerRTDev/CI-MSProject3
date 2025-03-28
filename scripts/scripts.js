@@ -298,6 +298,22 @@ function handleEditSubmit(event) {
     });
 }
 
+// Handle clicking the Cancel or Close button on modal
+document.addEventListener("DOMContentLoaded", () => {
+    // Cancel button
+    const cancelBtn = document.getElementById("cancel-edit");
+    if (cancelBtn) {
+    cancelBtn.addEventListener("click", closeEditModal);
+}
+
+// Close (X) button
+const closeBtn = document.getElementById("close-modal");
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeEditModal);
+    }
+});
+
+
 // Add one translation field by default when the page loads
 window.addEventListener("DOMContentLoaded", () => {
     loadWords();
