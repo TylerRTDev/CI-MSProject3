@@ -21,7 +21,7 @@ try {
         </div>
         <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
         <div class="actions">
-        <button class="edit-btn">Edit</button>
+        <button class="edit-btn" data-id="${word._id}">Edit</button>
         <button class="delete-btn" data-id="${word._id}">Delete</button>
         </div>
     `;
@@ -58,6 +58,50 @@ if (e.target.classList.contains("delete-btn")) {
     }
 }
 });
+
+// Handle clicking "Edit" button
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("edit-btn")) {
+        const card = e.target.closest(".word-card");
+
+        // Get word details from card
+        const word = card.querySelector("h3").textContent;
+        const pronunciation = card.querySelectorAll(".translations")[1].textContent.replace("Pronunciation: ", "");
+        const translationText = card.querySelectorAll(".translations")[0].textContent;
+
+        // Reset form before populating
+        document.getElementById("add-word-form").reset();
+        document.getElementById("translations-wrapper").innerHTML = "";
+
+        // Load data into form
+        document.getElementById("word").value = word;
+        document.getElementById("pronunciation").value = pronunciation;
+
+        // Parse translations from text (e.g. Lithuanian: Labas | French: Bonjour)
+        const parts = translationText.split(" | ");
+        parts.forEach((pair) => {
+        const [lang, trans] = pair.split(": ");
+        if (lang && trans) {
+            const wrapper = document.getElementById("translations-wrapper");
+            const div = document.createElement("div");
+            div.classList.add("translation-pair");
+
+            div.innerHTML = `
+            <input type="text" class="lang" value="${lang}" required />
+            <input type="text" class="trans" value="${trans}" required />
+            <button type="button" class="remove-btn">✖</button>
+            `;
+
+            wrapper.appendChild(div);
+        }
+        });
+
+        // Store word ID to hidden field
+        const id = e.target.getAttribute("data-id");
+        document.getElementById("edit-id").value = id;
+    }
+});
+
 
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("remove-btn")) {
@@ -102,11 +146,18 @@ const newWord = {
 };
 
 try {
-    const res = await fetch("http://127.0.0.1:5000/api/words", {
-    method: "POST",
+    const editId = document.getElementById("edit-id").value;
+    const method = editId ? "PUT" : "POST";
+    const url = editId
+    ? `http://127.0.0.1:5000/api/words/${editId}`
+    : "http://127.0.0.1:5000/api/words";
+
+const res = await fetch(url, {
+    method,
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(newWord)
+    body: JSON.stringify(newWord),
     });
+
 
     if (!res.ok) {
     const error = await res.json();
