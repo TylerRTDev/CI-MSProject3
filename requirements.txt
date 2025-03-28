@@ -1,1 +1,5 @@
-pip install flask flask-pymongo flask-cors python-dotenv
+flask
+flask-pymongo
+flask-cors
+python-dotenv
+gunicorn
