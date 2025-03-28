@@ -81,5 +81,4 @@ document.addEventListener("click", function (e) {
 // Add one translation field by default when the page loads
 window.addEventListener("DOMContentLoaded", () => {
     loadWords();
-    addTranslationField();
 });

@@ -83,6 +83,55 @@ header h1 {
     border-radius: 5px;
 }
 
+/* Modal backdrop */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 60px;
+  }
+  
+  /* Modal box */
+  .modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Close (X) button */
+.close-btn {
+position: absolute;
+top: 10px;
+right: 15px;
+font-size: 1.5rem;
+color: var(--dark);
+cursor: pointer;
+}
+
+/* Modal actions button row */
+.modal-actions {
+display: flex;
+gap: 0.5rem;
+margin-top: 1rem;
+}
+
+.modal .cancel {
+background-color: var(--red);
+color: white;
+}
+
+
 
 .word-card {
     background-color: var(--white);
