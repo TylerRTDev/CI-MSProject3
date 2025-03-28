@@ -69,14 +69,6 @@ document.addEventListener("click", function (e) {
         const pronunciation = card.querySelectorAll(".translations")[1].textContent.replace("Pronunciation: ", "");
         const translationText = card.querySelectorAll(".translations")[0].textContent;
 
-        // Reset form before populating
-        document.getElementById("add-word-form").reset();
-        document.getElementById("translations-wrapper").innerHTML = "";
-
-        // Load data into form
-        document.getElementById("word").value = word;
-        document.getElementById("pronunciation").value = pronunciation;
-
         // Parse translations from text (e.g. Lithuanian: Labas | French: Bonjour)
         const parts = translationText.split(" | ");
         parts.forEach((pair) => {
