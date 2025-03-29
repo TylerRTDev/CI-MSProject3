@@ -275,6 +275,13 @@ footer {
     vertical-align: middle;
 }
 
+@media (min-width: 576px) {
+    .modal-content {
+        width: 85%;
+    }
+}
+
+/* Responsive Enhancements */
 @media(min-width: 768px) {
     .landing h1 {
     font-size: 2.5rem;
@@ -283,5 +290,27 @@ footer {
     .dashboard {
     max-width: 600px;
     margin: 0 auto;
+    }
+
+    .modal-content {
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px) {
+    .word-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .landing p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .landing h1 {
+        font-size: 3rem;
     }
 }
