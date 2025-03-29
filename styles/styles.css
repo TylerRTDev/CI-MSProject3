@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
 :root {
     --yellow: #fdd835;
     --green: #388e3c;
@@ -13,7 +16,7 @@
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Alumni Sans', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--gray);
     color: var(--dark);
 }
@@ -28,6 +31,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 1.8rem;
+    font-family: "Boldonse"
 }
 
 .landing {
@@ -81,6 +85,7 @@ header h1 {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     margin-bottom: 2rem;
+    
 }
 
 #add-word-form input {
