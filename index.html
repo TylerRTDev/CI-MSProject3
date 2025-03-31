@@ -14,66 +14,98 @@
         <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="">
     </head>
+
     <body>
-    <header>
-        <h1>LingoLink</h1>
-    </header>
-    
-    <!-- Landing Page -->
-    <section class="landing">
-        <h1>Track & Learn Words Across Languages</h1>
-        <p>Grow your multilingual vocabulary with smart tracking, pronunciation, and translation support – all in one place.</p>
-        <button class="cta-btn" onclick="document.querySelector('.dashboard').scrollIntoView({behavior: 'smooth'})">Start Learning</button>
-    </section>
+        
+
+    <!-- Hero Section -->
+        <section class="hero">
+            <div class="global-overlay">
+                <div class="shadow-overlay"></div>
+            </div>
+            <div class="overlay">
+                <header class="hero-header">
+                    <div class="logo">
+                        <span class="logo-header">LingoLink</span>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <div class="auth-buttons">
+                            <a href="#" class="login">Login</a>
+                            <a href="#" class="register">Register</a>
+                        </div>
+                    </nav>
+                </header>    
+                <div class="title">
+                    <div class="logo-title">
+                        <span class="logo-bold">LingoLink</span>
+                        <p class="tagline">Linking you through languages.</p>
+                    </div>
+                    <div class="hero-content">
+                    <h1>Track & learn words across<br><span class="highlight">multiple Languages.</span></h1>
+                    <p>
+                        Grow your multilingual vocabulary with smart tracking, pronunciation, and translation support – all in one place.
+                    </p>
+                    <a href="#" class="cta-btn">Start Learning</a>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
     
     <!-- Dashboard Page -->
-    <section class="dashboard">
-        <h2>Word Catalogue</h2>
-        <div id="edit-status" class="edit-status"></div>
-            <form id="add-word-form">
-            <h3>Add a New Word</h3>
-            <input type="hidden" id="edit-id" value="">
-            <input type="text" id="word" placeholder="Word" required />
-            <input type="text" id="language" placeholder="Language" required />
-            <input type="text" id="pronunciation" placeholder="Pronunciation" />
-            <input type="text" id="category" placeholder="Category" />
-            <div id="translations-wrapper"></div>
-            <button type="button" class="cta-btn" onclick="addTranslationField()">+ Add Translation</button>
-            <button type="submit" class="cta-btn">Add Word</button>
-            </form>
-    </section>
+        <section class="dashboard">
+            <h2>Word Catalogue</h2>
+            <div id="edit-status" class="edit-status"></div>
+                <form id="add-word-form">
+                <h3>Add a New Word</h3>
+                <input type="hidden" id="edit-id" value="">
+                <input type="text" id="word" placeholder="Word" required />
+                <input type="text" id="language" placeholder="Language" required />
+                <input type="text" id="pronunciation" placeholder="Pronunciation" />
+                <input type="text" id="category" placeholder="Category" />
+                <div id="translations-wrapper"></div>
+                <button type="button" class="cta-btn" onclick="addTranslationField()">+ Add Translation</button>
+                <button type="submit" class="cta-btn">Add Word</button>
+                </form>
+        </section>
 
     <!-- Edit Modal -->
-    <div id="edit-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-modal" class="close-btn">&times;</span>
-            <h3>Edit Word</h3>
-            <form id="edit-word-form" onsubmit="return handleEditSubmit(event)">
-                <input type="hidden" id="edit-word-id" value="">
-                <input type="text" id="edit-word" placeholder="Word" required />
-                <input type="text" id="edit-language" placeholder="Language" required />
-                <input type="text" id="edit-pronunciation" placeholder="Pronunciation" />
-                <input type="text" id="edit-category" placeholder="Category" />
-                <div id="edit-translations-wrapper"></div>
-                <button type="button" class="cta-btn" onclick="addEditTranslationField()">+ Add Translation</button>
-                <div class="modal-actions">
-                    <button type="submit" class="cta-btn">Update Word</button>
-                    <button type="button" id="cancel-edit" class="cta-btn cancel">Cancel</button>
-                </div>
-            </form>
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close-btn">&times;</span>
+                <h3>Edit Word</h3>
+                <form id="edit-word-form" onsubmit="return handleEditSubmit(event)">
+                    <input type="hidden" id="edit-word-id" value="">
+                    <input type="text" id="edit-word" placeholder="Word" required />
+                    <input type="text" id="edit-language" placeholder="Language" required />
+                    <input type="text" id="edit-pronunciation" placeholder="Pronunciation" />
+                    <input type="text" id="edit-category" placeholder="Category" />
+                    <div id="edit-translations-wrapper"></div>
+                    <button type="button" class="cta-btn" onclick="addEditTranslationField()">+ Add Translation</button>
+                    <div class="modal-actions">
+                        <button type="submit" class="cta-btn">Update Word</button>
+                        <button type="button" id="cancel-edit" class="cta-btn cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
 
         <!-- Footer -->
-    <footer>
-        <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61570549830925" target="_blank" rel="noopener"><img src="./resources/icons/facebook.svg" alt="Facebook"></a>
-        <a href="https://x.com/TylerRTDev" target="_blank" rel="noopener"><img src="./resources/icons/x-social.svg" alt="Twitter"></a>
-        <a href="https://www.instagram.com/tylerrtdev/" target="_blank" rel="noopener"><img src="./resources/icons/instagram.svg" alt="Instagram"></a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener"><img src="./resources/icons/youtube.svg" alt="YouTube"></a>
-        <a href="https://github.com/TylerRTDev" target="_blank" rel="noopener"><img src="./resources/icons/github-svgrepo-com.svg" alt="Git-Hub"></a>
-        </div>
-    </footer>
+        <footer>
+            <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61570549830925" target="_blank" rel="noopener"><img src="./resources/icons/facebook.svg" alt="Facebook"></a>
+            <a href="https://x.com/TylerRTDev" target="_blank" rel="noopener"><img src="./resources/icons/x-social.svg" alt="Twitter"></a>
+            <a href="https://www.instagram.com/tylerrtdev/" target="_blank" rel="noopener"><img src="./resources/icons/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener"><img src="./resources/icons/youtube.svg" alt="YouTube"></a>
+            <a href="https://github.com/TylerRTDev" target="_blank" rel="noopener"><img src="./resources/icons/github-svgrepo-com.svg" alt="Git-Hub"></a>
+            </div>
+        </footer>
     <script src="./scripts/scripts.js"></script>
     </body>
 </html>
