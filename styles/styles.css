@@ -43,10 +43,9 @@ html, body {
 
 .hero {
     position: relative;
-    /* background: url('/resources/images/flag-3614861_1920.jpg') no-repeat center center/cover; */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.889) 5%, rgba(255, 255, 255, 0.429) 80%), url('/resources/images/flag-3614861_1920.jpg') no-repeat center center/cover;
     box-shadow: inset 0px 0px 10000px 10px rgb(0, 0, 0);
-    height: 100vh;
+    height: 75vh;
     font-family: 'Alumni Sans', sans-serif;
 }
 
@@ -81,7 +80,6 @@ html, body {
 }
 
 .logo {
-    font-size: rem;
     font-weight: bold;
     line-height: 1.2;
     padding: 10px;
@@ -202,7 +200,6 @@ nav ul li a:hover {
 }
 
 .cta-btn {
-    /* background: linear-gradient(to bottom, #FFF600 15%, #979200 100% ); */
     background-color: var(--yellow);
     border: none;
     padding: 1rem 2rem;
@@ -217,58 +214,6 @@ nav ul li a:hover {
 
 .cta-btn:hover {
     background-color: #ffb300;
-}
-
-.dashboard-section {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.dashboard-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    font-family: 'Boldonse', sans-serif;
-    border-bottom: 3px solid var(--dark);
-    display: inline-block;
-    padding-bottom: 0.5rem;
-}
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.dashboard-card {
-    background-color: var(--white);
-    border-left: 10px solid var(--green);
-    padding: 2rem 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.dashboard-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.dashboard-card h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-.dashboard-card p {
-    font-size: 1rem;
-    color: #555;
 }
 
 .dashboard {
@@ -291,26 +236,84 @@ nav ul li a:hover {
 
 #add-word-form {
     background-color: var(--white);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    margin-bottom: 2rem;
-    
+    padding: 2rem;
+    border-left: 10px solid var(--green);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    position: relative;
+}
+
+#add-word-form h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#add-word-form .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#add-word-form .form-header span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+#add-word-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: var(--dark);
 }
 
 #add-word-form input {
     display: block;
     width: 100%;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     padding: 0.7rem;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+.translation-pair {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: baseline;
+    flex-wrap: nowrap;
+}
+
+.translation-pair input {
+    flex: 1;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fffde7;
+}
+
+
 #add-word-form .cta-btn {
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
+    background-color: var(--yellow);
+    color: var(--dark);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+#add-word-form .cta-btn:hover {
+    background-color: #ffb300;
 }
 
 #translations-wrapper {
@@ -424,23 +427,15 @@ color: white;
     font-size: 0.95rem;
 }
 
-.translation-pair {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    align-items: center;
-}
-
-.translation-pair input {
-    flex: 1;
-}
-
 .remove-btn {
     background-color: var(--red);
+    height: 100%;
+    display: flex;
+    align-items: center;
     color: white;
     border: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 3px;
+    padding: 0.3rem 0.5rem;
+    border-radius: 40px;
     cursor: pointer;
 }
 

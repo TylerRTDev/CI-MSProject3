@@ -177,9 +177,9 @@ function addTranslationField() {
     div.classList.add("translation-pair");
 
 div.innerHTML = `
-    <input type="text" class="lang" placeholder="Language (e.g. French)" required />
-    <input type="text" class="trans" placeholder="Translation (e.g. Bonjour)" required />
-    <button type="button" class="remove-btn">✖</button>
+    <input type="text" class="lang" placeholder="Language (e.g. English)" required />
+    <input type="text" class="trans" placeholder="Translation (e.g. Hello)" required />
+    <button type="button" class="remove-btn">X</button>
 `;
 
 wrapper.appendChild(div);
