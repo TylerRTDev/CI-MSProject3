@@ -21,19 +21,12 @@ async function loadWords() {
 
         card.innerHTML = `
             <h3>${word.word}</h3>
-            <span class="pronunciation">${word.pronunciation || ""}</span>
-
-            <p><strong>Language :</strong> ${word.language}</p>
-            ${mainLang && mainTrans ? `<p><strong>Translation :</strong> ${mainTrans}</p>` : ""}
-
-            ${otherTranslations.length > 0 ? `<span><strong>Other Translation:</strong></span>` : ""}
             <div class="translations">
-                ${otherTranslations
-                    .map(
-                        ([lang, trans]) => `<span><span>${lang}</span> : ${trans}</span>`
-                    )
+            ${Object.entries(word.translations)
+                .map(([lang, trans]) => `${lang}: ${trans}`)
                 .join(" | ")}
             </div>
+            <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
             <div class="actions">
             <button class="edit-btn" data-id="${word._id}">Edit</button>
             <button class="delete-btn" data-id="${word._id}">Delete</button>
@@ -127,8 +120,8 @@ const pronunciation = document.getElementById("pronunciation").value.trim();
 const category = document.getElementById("category").value.trim();
 let translations = {};
 
-const langInputs = document.querySelectorAll("#add-word-form .lang");
-const transInputs = document.querySelectorAll("#add-word-form .trans");
+const langInputs = document.querySelectorAll(".lang");
+const transInputs = document.querySelectorAll(".trans");
 
 for (let i = 0; i < langInputs.length; i++) {
     const lang = langInputs[i].value.trim();
