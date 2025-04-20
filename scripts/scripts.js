@@ -145,7 +145,7 @@ const newWord = {
 };
 
 try {
-    const editId = document.getElementById("edit-id").value;
+    const editId = document.getElementById("edit-word-id").value;
     const method = editId ? "PUT" : "POST";
     const url = editId
     ? `${API_BASE}/api/words/${editId}`
