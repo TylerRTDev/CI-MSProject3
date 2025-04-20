@@ -116,8 +116,8 @@ const pronunciation = document.getElementById("pronunciation").value.trim();
 const category = document.getElementById("category").value.trim();
 let translations = {};
 
-const langInputs = document.querySelectorAll(".lang");
-const transInputs = document.querySelectorAll(".trans");
+const langInputs = document.querySelectorAll("#add-word-form .lang");
+const transInputs = document.querySelectorAll("#add-word-form .trans");
 
 for (let i = 0; i < langInputs.length; i++) {
     const lang = langInputs[i].value.trim();
@@ -213,20 +213,7 @@ document.addEventListener("click", function (e) {
     }
 });
 
-function clearEditModalFields() {
-    document.getElementById("edit-word").value = "";
-    document.getElementById("edit-language").value = "";
-    document.getElementById("edit-pronunciation").value = "";
-    document.getElementById("edit-category").value = "";
-    document.getElementById("edit-translations-wrapper").innerHTML = "";
-  }
-  
-  document.getElementById("cancel-edit").addEventListener("click", () => {
-    clearEditModalFields();
-    document.getElementById("edit-modal").style.display = "none";
-  });
-  
-
+// Close modal when clicking outside of it
 function closeEditModal() {
     document.getElementById("edit-modal").style.display = "none";
     document.getElementById("edit-word-form").reset();
