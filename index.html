@@ -92,14 +92,24 @@
         <div id="edit-modal" class="modal">
             <div class="modal-content">
                 <span id="close-modal" class="close-btn">&times;</span>
-                <h3>Edit Word</h3>
                 <form id="edit-word-form" onsubmit="return handleEditSubmit(event)">
+                    <div class="form-header">
+                        <h3>Edit Word</h3>
+                        <span>At least one field required*</span>
+                    </div>
                     <input type="hidden" id="edit-word-id" value="">
+                    <label for="edit-word">Your Word</label>
                     <input type="text" id="edit-word" placeholder="Word" required />
+                    <label for="edit-language">Language</label>
                     <input type="text" id="edit-language" placeholder="Language" required />
+                    <label for="edit-pronunciation">Pronunciation</label>
                     <input type="text" id="edit-pronunciation" placeholder="Pronunciation" />
+                    <label for="edit-category">Category</label>
                     <input type="text" id="edit-category" placeholder="Category" />
-                    <div id="edit-translations-wrapper"></div>
+                    <label>Translation of word*</label>
+                    <div id="edit-translations-wrapper">
+                        <!-- Translation pairs dynamically added here -->
+                    </div>
                     <button type="button" class="cta-btn" onclick="addEditTranslationField()">+ Add Translation</button>
                     <div class="modal-actions">
                         <button type="submit" class="cta-btn">Update Word</button>
