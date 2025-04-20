@@ -11,18 +11,29 @@ async function loadWords() {
         const wordSection = document.createElement("div");
         wordSection.classList.add("word-cards");
 
+        const translations = Object.entries(word.translations || {});
+        const [mainLang, mainTrans] = translations[0] || [];
+        const otherTranslations = translations.slice(1);
+
         words.forEach((word) => {
         const card = document.createElement("div");
         card.classList.add("word-card");
 
         card.innerHTML = `
             <h3>${word.word}</h3>
+            <span class="pronunciation">${word.pronunciation || ""}</span>
+
+            <p><strong>Language :</strong> ${word.language}</p>
+            ${mainLang && mainTrans ? `<p><strong>Translation :</strong> ${mainTrans}</p>` : ""}
+
+            ${otherTranslations.length > 0 ? `<span><strong>Other Translation:</strong></span>` : ""}
             <div class="translations">
-            ${Object.entries(word.translations)
-                .map(([lang, trans]) => `${lang}: ${trans}`)
+                ${otherTranslations
+                    .map(
+                        ([lang, trans]) => `<span><span>${lang}</span> : ${trans}</span>`
+                    )
                 .join(" | ")}
             </div>
-            <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
             <div class="actions">
             <button class="edit-btn" data-id="${word._id}">Edit</button>
             <button class="delete-btn" data-id="${word._id}">Delete</button>
@@ -224,7 +235,7 @@ function closeEditModal() {
     document.getElementById("edit-word-id").value = "";
     document.getElementById("add-word-form").reset();
     document.getElementById("translations-wrapper").innerHTML = "";
-    
+
     const addWrapper = document.getElementById("translations-wrapper");
     addWrapper.innerHTML = "";
     addTranslationField();
