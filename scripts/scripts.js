@@ -84,7 +84,7 @@ document.addEventListener("click", function (e) {
             div.innerHTML = `
             <input type="text" class="lang" value="${lang}" required />
             <input type="text" class="trans" value="${trans}" required />
-            <button type="button" class="remove-btn">✖</button>
+            <button type="button" class="remove-btn">X</button>
             `;
 
             wrapper.appendChild(div);
@@ -168,7 +168,8 @@ const res = await fetch(url, {
 
 } catch (error) {
     console.error("Error adding word:", error);
-}
+    alert("❌ Failed to add word.");
+    }
 });
 
 function addTranslationField() {
@@ -176,13 +177,13 @@ function addTranslationField() {
     const div = document.createElement("div");
     div.classList.add("translation-pair");
 
-div.innerHTML = `
-    <input type="text" class="lang" placeholder="Language (e.g. English)" required />
-    <input type="text" class="trans" placeholder="Translation (e.g. Hello)" required />
-    <button type="button" class="remove-btn">X</button>
-`;
+    div.innerHTML = `
+        <input type="text" class="lang" placeholder="Language (e.g. English)" required />
+        <input type="text" class="trans" placeholder="Translation (e.g. Hello)" required />
+        <button type="button" class="remove-btn">X</button>
+    `;
 
-wrapper.appendChild(div);
+    wrapper.appendChild(div);
 }
 
 // Open modal and populate fields
@@ -212,6 +213,19 @@ document.addEventListener("click", function (e) {
     }
 });
 
+function clearEditModalFields() {
+    document.getElementById("edit-word").value = "";
+    document.getElementById("edit-language").value = "";
+    document.getElementById("edit-pronunciation").value = "";
+    document.getElementById("edit-category").value = "";
+    document.getElementById("edit-translations-wrapper").innerHTML = "";
+  }
+  
+  document.getElementById("cancel-edit").addEventListener("click", () => {
+    clearEditModalFields();
+    document.getElementById("edit-modal").style.display = "none";
+  });
+  
 
 function closeEditModal() {
     document.getElementById("edit-modal").style.display = "none";
