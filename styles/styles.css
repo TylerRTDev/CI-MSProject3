@@ -404,15 +404,53 @@ color: white;
 .word-card {
     background-color: var(--white);
     border-left: 6px solid var(--green);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.word-card:hover {
+    transform: scale(1.02);
 }
 
 .word-card h3 {
-    margin: 0;
+    margin: 0 0 0.3rem 0;
     color: var(--red);
+    font-weight: 900;
+    color: var(--dark);
+    display: inline-block;
+}
+
+.word-card .pronunciation {
+    font-size: 1.8rem;
+    color: var(--red);
+    font-weight: bold;
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+.word-card p {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+}
+
+.word-card .translations {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.word-card .translations span {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.word-card .translations span span {
+    color: var(--blue);
+    font-weight: bold;
 }
 
 .translations {
@@ -434,24 +472,34 @@ color: white;
 }
 
 .actions {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .actions button {
+    flex: 1;
     margin-right: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.2rem;
     font-weight: bold;
+    font-size: 1rem;
     border: none;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.edit-btn {
+.actions .edit-btn {
     background-color: var(--yellow);
     color: var(--dark);
 }
 
-.delete-btn {
+.actions .open-btn {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.actions .delete-btn {
     background-color: var(--red);
     color: var(--white);
 }
