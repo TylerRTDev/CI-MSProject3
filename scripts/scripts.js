@@ -172,19 +172,22 @@ const res = await fetch(url, {
     }
 });
 
-function addTranslationField() {
-    const wrapper = document.getElementById("translations-wrapper");
+function addTranslationField(lang = "", trans = "", target = "add") {
+    const wrapperId = target === "edit" ? "edit-translations-wrapper" : "translations-wrapper";
+    const wrapper = document.getElementById(wrapperId);
+
     const div = document.createElement("div");
     div.classList.add("translation-pair");
 
     div.innerHTML = `
-        <input type="text" class="lang" placeholder="Language (e.g. English)" required />
-        <input type="text" class="trans" placeholder="Translation (e.g. Hello)" required />
-        <button type="button" class="remove-btn">X</button>
+        <input type="text" class="lang" value="${lang}" placeholder="Language" required />
+        <input type="text" class="trans" value="${trans}" placeholder="Translation" required />
+        <button type="button" class="remove-btn" onclick="this.parentElement.remove()">X</button>
     `;
 
     wrapper.appendChild(div);
 }
+
 
 // Open modal and populate fields
 document.addEventListener("click", function (e) {
@@ -219,6 +222,9 @@ function closeEditModal() {
     document.getElementById("edit-word-form").reset();
     document.getElementById("edit-translations-wrapper").innerHTML = "";
     document.getElementById("edit-word-id").value = "";
+    document.getElementById("add-word-form").reset();
+    document.getElementById("translations-wrapper").innerHTML = "";
+
 }
 
 function addEditTranslationField(lang = "", trans = "") {
