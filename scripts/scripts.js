@@ -224,7 +224,10 @@ function closeEditModal() {
     document.getElementById("edit-word-id").value = "";
     document.getElementById("add-word-form").reset();
     document.getElementById("translations-wrapper").innerHTML = "";
-
+    
+    const addWrapper = document.getElementById("translations-wrapper");
+    addWrapper.innerHTML = "";
+    addTranslationField();
 }
 
 function addEditTranslationField(lang = "", trans = "") {
