@@ -1,11 +1,20 @@
 # LingoLink - Track & Learn Words Across Languages
 
+## 🔗 Live Project
+
+- 🌍 Live Site: [https://tylerrtdev.github.io/CI-MSProject3/](https://tylerrtdev.github.io/CI-MSProject3/)
+- 💾 Backend API: [https://lingolink-0jc6.onrender.com](https://lingolink-0jc6.onrender.com)
+- 💻 GitHub Repo: [TylerRTDev/CI-MSProject3](https://github.com/TylerRTDev/CI-MSProject3)
+
+---
+
 ## Table of Contents
 
 - [User Experience (UX)](#-user-experience-ux)
   - [Project Goals](#project-goals)
   - [Target Audience](#target-audience)
   - [User Goals](#user-goals)
+  - [User Value](#user-value)
   - [Color Scheme](#color-scheme)
   - [Typography](#typography)
   - [Wireframes](#wireframes)
@@ -29,12 +38,6 @@
 - [Finished Product](#-finished-product)
 
 - [Deployment](#-deployment)
-  - [GitHub Pages](#github-pages)
-
-- [Credits](#credits)
-  - [Content](#content)
-  - [Media](#media)
-  - [Code](#code)
 
 - [Testing Documentation](TESTING.md)
 
@@ -58,6 +61,19 @@ The goal of this project is to create a multilingual vocabulary tracker called *
 - Edit existing entries quickly using a clean modal interface
 - Delete entries they no longer want
 - Use the app seamlessly across mobile and desktop devices
+
+### User Value
+
+- 📚 **Multi-language support** – Users can track and translate vocabulary across multiple languages, not just one-to-one translation.
+- 🧠 **Pronunciation assistance** – Allows users to add pronunciation guides to help with accurate speech and memory retention.
+- 🧩 **Smart translation entries** – Supports multiple translations for one word with flexible language pairs.
+- 🔁 **Edit-friendly** – Users can easily update entries via a responsive modal system without refreshing the page.
+- 🎯 **Custom categories** – Helps learners group words into themes like Greetings, Food, Travel, etc.
+- 📱 **Mobile-first interface** – Designed with mobile responsiveness in mind for learning on the go.
+- 🚀 **Fast performance** – Instant UI feedback when adding, editing, or deleting words via JavaScript interactions.
+- ☁️ **Persistent cloud storage** – All words are saved securely in the cloud using MongoDB Atlas.
+
+---
 
 ### Color Scheme
 
@@ -158,33 +174,8 @@ Each word in the MongoDB collection follows this structure:
 }
 ```
 
-- All fields are optional except the `word` and at least one `translation`.
+- All fields are required and at least one `translation` must be added.
 - `translations` is a key-value object where each key is a language name and the value is its corresponding translation.
-
-
----
-
-## ✅ Testing
-
-### Testing User Stories
-See [TESTING.md](TESTING.md) for detailed scenarios and coverage.
-
-### Code Validation
-- HTML, CSS, and JavaScript code validated using official W3C and ESLint tools.
-
-### Accessibility
-- Semantic HTML tags used for structure.
-- High contrast button colors.
-- Font sizes adjusted for readability on mobile.
-
-### Tools Testing
-- Postman used to test GET, POST, PUT, DELETE routes.
-- Console and network tabs in dev tools for live debugging.
-
-### Manual Testing
-- Multiple form submissions tested.
-- Error scenarios handled with alerts.
-- Responsiveness tested on Chrome and Firefox developer tools.
 
 ---
 
