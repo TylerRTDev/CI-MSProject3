@@ -91,23 +91,34 @@ _ Wireframe screenshots will be added here in the final version._
 
 ---
 
-## ✨ Features
+## 🌟 Features
 
-### General
-- Mobile-first layout with responsive design.
-- Form to add, edit, and delete words with multiple translations.
-- Modal edit form for better UX.
-- Footer with social media links.
+LingoLink is a full-stack language learning tool that helps users add, manage, and track vocabulary across multiple languages. It includes the following core features:
 
-### Landing Page
-- Overview of the tool.
-- Call to action button smoothly scrolls to dashboard.
+### ✅ General Features
+- Add a new word with optional pronunciation and category
+- Add multiple translations for each word
+- Edit word entries via modal pop-up
+- Delete entries with confirmation handling
+- Form validation to ensure translations are always present
+- Responsive UI optimized for mobile and desktop
 
-### Not Implemented
-- Authentication & user accounts.
-- Advanced statistics/analytics per language.
+### 🖼 Landing Page
+- Includes branding, tagline, and call-to-action
+- Gradient hero background and animated transitions
+- Sticky navigation bar with login/register buttons
+
+### 📋 Word Catalogue
+- Displays all user-added words
+- Each word card shows the base word, pronunciation, and its translations
+- "Edit" button opens modal with prefilled inputs
+- "Delete" button removes the word and updates the UI
+
+### 🛠 Not Implemented (Planned Features)
+- User authentication (login/register)
+- Challenge mode / gamification
+- Favourites and categories filtering
 - Audio pronunciation.
-- Category filtering and sorting.
 
 ---
 
@@ -118,17 +129,38 @@ _ Wireframe screenshots will be added here in the final version._
 - CSS3
 - JavaScript (ES6+)
 - Python (Flask backend)
+- MongoDB
+- Render (Cloud Deployment)
 
 ### Frameworks, Libraries and Programs Used
-- Flask
-- Flask-PyMongo
-- Flask-CORS
-- Python-Dotenv
-- Render (Backend Hosting)
-- GitHub Pages (Frontend Hosting)
-- Visual Studio Code
-- Postman (Testing APIs)
-- MongoDB Atlas
+- [Flask](https://flask.palletsprojects.com/) – Python web framework for API and backend logic
+- [PyMongo](https://pymongo.readthedocs.io/) – Interact with MongoDB Atlas
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) – Cloud-hosted NoSQL database
+- [Render](https://render.com) – Deployed Flask backend
+- [GitHub Pages](https://pages.github.com/) – Deployed frontend
+- [Postman](https://www.postman.com/) – Manual API testing
+- [dotenv](https://pypi.org/project/python-dotenv/) – Manage environment variables
+
+### Data Model
+
+Each word in the MongoDB collection follows this structure:
+
+```json
+{
+  "word": "Hello",
+  "language": "English",
+  "pronunciation": "heh-lo",
+  "category": "Greeting",
+  "translations": {
+    "Lithuanian": "Labas",
+    "French": "Bonjour"
+  }
+}
+```
+
+- All fields are optional except the `word` and at least one `translation`.
+- `translations` is a key-value object where each key is a language name and the value is its corresponding translation.
+
 
 ---
 
@@ -156,18 +188,20 @@ See [TESTING.md](TESTING.md) for detailed scenarios and coverage.
 
 ---
 
-## 🚀 Finished Product
-The project is fully functional and deployed live:
-- **Frontend:** [https://tylerrtdev.github.io/CI-MSProject3/](https://tylerrtdev.github.io/CI-MSProject3/)
-- **Backend API:** [https://lingolink-0jc6.onrender.com](https://lingolink-0jc6.onrender.com)
+## 🚀 Deployment
 
----
+This project is deployed using two services:
 
-## 📦 Deployment
+### 🔧 Backend (Flask API)
+- Hosted on: [Render](https://render.com)
+- Repository includes `requirements.txt`, `Procfile`, and `.env` (not tracked).
+- Environment Variables:
+  - `MONGO_URI` — Secure database connection string
+  - `DB_NAME` — MongoDB database name
 
-### Github Pages
-1. `index.html`, `styles.css`, and `scripts.js` pushed to GitHub repo.
-2. GitHub Pages enabled via `Settings > Pages`.
-3. Custom domain can be added if required.
+### 🎨 Frontend (Static Hosting)
+- Hosted on: [GitHub Pages](https://github.com/TylerRTDev/CI-MSProject3)
+- `scripts.js` connects to the deployed Flask API using the `API_BASE` constant
+- No build tool required — app loads directly from `index.html`
 
 ---
