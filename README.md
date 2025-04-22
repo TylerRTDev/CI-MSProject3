@@ -195,4 +195,45 @@ This project is deployed using two services:
 - `scripts.js` connects to the deployed Flask API using the `API_BASE` constant
 - No build tool required — app loads directly from `index.html`
 
+### 📂 Version Control
+
+All development was tracked using Git with regular commits and branch usage.  
+The full project history is available via the public [GitHub repository](https://github.com/TylerRTDev/CI-MSProject3).
+
+### 🛠 Local Deployment
+To run the project locally:
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/TylerRTDev/CI-MSProject3.git
+```
+2. **Navigate to the backend folder**
+```bash
+cd CI-MSProject3
+```
+
+```bash
+cd backend
+```
+3. **Create and activate a virtual environment**
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+4. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+5. **Set up a `.env` file** with your credentials:
+```
+MONGO_URI="your_mongo_connection_string"
+SECRET_KEY="your_secret_key"
+```
+6. **Run the Flask server**
+```bash
+python app.py
+```
+7. Open `index.html` in your browser for the frontend.
+
+
 ---
