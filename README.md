@@ -235,5 +235,97 @@ python app.py
 ```
 7. Open `index.html` in your browser for the frontend.
 
+> ⚠️ **IMPORTANT:** When running locally, your `scripts.js` should point to:
+```javascript
+const API_BASE = "http://127.0.0.1:5000";
+```
+This ensures your frontend communicates with the Flask server running on your machine.
 
 ---
+
+### ☁️ Render Deployment (Cloud Backend)
+
+Render is a cloud hosting platform that allows you to deploy full-stack web applications easily. Below are beginner-friendly steps to deploy your Flask backend using Render.
+
+#### 📦 Prerequisites
+- A free Render account (sign up at [render.com](https://render.com))
+- A GitHub repository with your project pushed and accessible
+- Your `app.py`, `requirements.txt`, and `Procfile` in the root of the repo
+
+#### 🚀 Step-by-step Guide
+1. **Log into [Render](https://render.com)** and click on **"New Web Service"**.
+2. **Connect your GitHub account** and select your CI-MSProject3 repository.
+3. **Fill out the deploy settings**:
+   - **Name:** Give your app a name (e.g., `lingolink-backend`)
+   - **Environment:** Set to `Python 3`
+   - **Build Command:** *Leave blank*
+   - **Start Command:** `python app.py` (or use `gunicorn` if preferred)
+
+4. **Set the environment variables** under the "Environment" tab:
+```
+MONGO_URI = your MongoDB Atlas connection string
+DB_NAME = lingolink
+```
+
+5. **Ensure your repo includes:**
+   - `app.py` (entry point)
+   - `requirements.txt` (all dependencies)
+   - `Procfile` (optional but useful for flexibility)
+
+Example `Procfile`:
+```
+web: python app.py
+```
+
+6. Click **Create Web Service** – Render will build and deploy your app.
+
+> Once deployed, you will be given a live URL like `https://your-app-name.onrender.com`
+
+#### 🌐 Adjusting Your Frontend
+Make sure your frontend’s JavaScript file points to the correct deployed API:
+
+```javascript
+// Local development:
+// const API_BASE = "http://127.0.0.1:5000";
+
+// Production:
+const API_BASE = "https://your-app-name.onrender.com";
+```
+
+💡 You can toggle between the two using a comment or a simple environment flag if needed.
+
+---
+
+### ☁️ MongoDB Atlas Setup
+
+MongoDB Atlas is a cloud-based NoSQL database used to store word data. Here’s how to set it up if you’ve never used it before:
+
+### 🛠 Step-by-step MongoDB Atlas Setup
+1. **Create a MongoDB Atlas account** at [https://www.mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
+2. **Create a new project** and name it (e.g. `LingoLink Project`)
+3. **Build a cluster** using the free tier (Shared Cluster → AWS → region closest to you)
+4. **Create a database user**:
+   - Go to Database Access > Add New Database User
+   - Set a username and password (make note of this for later)
+   - Assign read and write access to any database
+5. **Whitelist your IP address**:
+   - Go to Network Access > Add IP Address
+   - Choose "Allow Access From Anywhere" (`0.0.0.0/0`) for development
+6. **Create a new database**:
+   - Go to Clusters > Browse Collections > Create Database
+   - Name your database (e.g. `lingolink`) and collection (e.g. `words`)
+7. **Copy the connection string**:
+   - Go to Clusters > Connect > Choose "Connect your application"
+   - Copy the URI that looks like:
+```bash
+mongodb+srv://<username>:<password>@clustername.mongodb.net/?retryWrites=true&w=majority
+```
+   - Replace `<username>` and `<password>` with the values you chose
+
+8. **Paste it into your `.env` file**:
+```bash
+MONGO_URI="your full connection string"
+SECRET_KEY="your_secret_key"
+```
+
+You’re now ready to connect your backend (Flask) to MongoDB Atlas securely!
