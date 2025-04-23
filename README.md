@@ -22,24 +22,17 @@
 - [Features](#-features)
   - [General](#general)
   - [Landing Page](#landing-page)
-  - [Not Implemented](#not-implemented)
+  - [Future Enhancements](#-future-enhancements)
 
 - [Technologies Used](#-technologies-used)
   - [Languages Used](#languages-used)
   - [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
-
-- [Testing](#-testing)
-  - [Testing User Stories](#testing-user-stories)
-  - [Code Validation](#code-validation)
-  - [Accessibility](#accessibility)
-  - [Tools Testing](#tools-testing)
-  - [Manual Testing](#manual-testing)
+  - [Data Model](#data-model)
 
 - [Finished Product](#-finished-product)
-
 - [Deployment](#-deployment)
-
 - [Testing Documentation](TESTING.md)
+- [Author and Contact](#-author-and-contact)
 
 ## 🧠 User Experience (UX)
 
@@ -130,13 +123,19 @@ LingoLink is a full-stack language learning tool that helps users add, manage, a
 - "Edit" button opens modal with prefilled inputs
 - "Delete" button removes the word and updates the UI
 
-### 🛠 Not Implemented (Planned Features)
-- User authentication (login/register)
-- Challenge mode / gamification
-- Favourites and categories filtering
-- Audio pronunciation.
+### 🌱 Future Enhancements
 
----
+Here are features planned for future versions of LingoLink:
+
+- ✅ **Search and filter** – Ability to search words and filter by category or language
+- 🎮 **Gamification** – Add challenge mode, badges, and scoreboards
+- 💾 **User authentication** – Enable login and secure user-specific word storage
+- 📈 **Progress tracking** – Visual indicators for how many words learned per session
+- 🔊 **Audio pronunciation** – Add audio clips for each word
+- 📝 **Dark mode toggle** – Theme switch for light/dark accessibility
+- 🔄 **Undo/Redo actions** – Enhance UX for edits and deletions
+- 📋 **Pagination** – Manage large word collections with paginated views
+
 
 ## 🧰 Technologies Used
 
@@ -176,6 +175,20 @@ Each word in the MongoDB collection follows this structure:
 
 - All fields are required and at least one `translation` must be added.
 - `translations` is a key-value object where each key is a language name and the value is its corresponding translation.
+
+---
+
+## ✅ Finished Product
+
+The final product provides all the required CRUD functionality, featuring:
+
+- A mobile-first layout for easy accessibility
+- Smooth UI transitions and modals for editing
+- Multi-translation word entries
+- Persistent storage via a MongoDB database
+- Instant updates to the word catalogue via a JavaScript frontend
+
+Users can create, view, update, and delete word entries, including support for categories and pronunciation. The project meets all core requirements for a backend-focused application using a NoSQL database.
 
 ---
 
@@ -243,7 +256,7 @@ This ensures your frontend communicates with the Flask server running on your ma
 
 ---
 
-### ☁️ Render Deployment (Cloud Backend)
+### ☁️ Render Deployment (Cloud Backend) - Optional
 
 Render is a cloud hosting platform that allows you to deploy full-stack web applications easily. Below are beginner-friendly steps to deploy your Flask backend using Render.
 
@@ -329,3 +342,10 @@ SECRET_KEY="your_secret_key"
 ```
 
 You’re now ready to connect your backend (Flask) to MongoDB Atlas securely!
+
+## 👤 Author and Contact
+
+Created by **Tyler Kerr**  
+📧 GitHub: [TylerRTDev](https://github.com/TylerRTDev)  
+🌍 Portfolio: [https://tkdev-portfolio.netlify.app/](https://tkdev-portfolio.netlify.app/)  
+📫 Contact via [Instagram](https://www.instagram.com/tylerrtdev/) or [X/Twitter](https://x.com/TylerRTDev)
