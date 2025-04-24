@@ -61,6 +61,7 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 - **CSS**: Validated using W3C CSS Validator.
   - Result: All styling passed validation.
   ![css-validator](/resources/images/css-validation.png)
+  ![404-validator](/resources/images/css-404-validator.png)
 - **JavaScript**: Checked for syntax errors via browser console.
   - Result: No major issues or console warnings.
 - **Python (Flask)**: Linted using `flake8`.
