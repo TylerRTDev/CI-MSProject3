@@ -58,10 +58,12 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 
 - **HTML**: Validated using W3C Markup Validator.
   - Result: No critical errors found.
+  ![404 HTML Validator](resources/images/html-404-validator.png)
+  ![Index HTML Validator](resources/images/html-validator.png)
 - **CSS**: Validated using W3C CSS Validator.
   - Result: All styling passed validation.
-  ![css-validator](/resources/images/css-validation.png)
-  ![404-validator](/resources/images/css-404-validator.png)
+  ![CSS Validator](/resources/images/css-validation.png)
+  ![404 Validator](/resources/images/css-404-validator.png)
 - **JavaScript**: Checked for syntax errors via browser console.
   - Result: No major issues or console warnings.
 - **Python (Flask)**: Linted using `flake8`.
@@ -84,6 +86,22 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 | GitHub Pages   | Frontend deployment              | ✅ Passed |
 | Render.com     | Backend deployment               | ✅ Passed |
 
+### Postman Collection
+
+![Postman API Collection](/resources/images/postman-collection.png)
+
+### MongoDB Atlas
+
+![MongoDB Data](/resources/images/mongodb-data.png)
+
+### Frontend
+
+![Frontend Deployed Page](/resources/images/frontend-webpage.png)
+
+### Render
+
+![Render Dashboard](/resources/images/render-workspace.png)
+
 ## Manual Testing Matrix
 
 | Feature                  | Action                            | Expected Result                    | Outcome |
@@ -95,6 +113,62 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 | Cancel Edit             | Click cancel                      | Modal closes, no update occurs     | ✅     |
 | Delete Word             | Click delete                      | Card disappears from list          | ✅     |
 | Load on Page Refresh    | Refresh page                      | Existing words are reloaded        | ✅     |
+
+### GET Method
+
+<details>
+<summary>Local API Testing</summary>
+<br>
+
+</details>
+
+<details>
+<summary>Production API Testing</summary>
+<br>
+
+</details>
+
+### POST Method
+
+<details>
+<summary>Local API Testing</summary>
+<br>
+
+</details>
+
+<details>
+<summary>Production API Testing</summary>
+<br>
+
+</details>
+
+### PUT Method
+
+<details>
+<summary>Local API Testing</summary>
+<br>
+
+</details>
+
+<details>
+<summary>Production API Testing</summary>
+<br>
+
+</details>
+
+### DELETE Method
+
+<details>
+<summary>Local API Testing</summary>
+<br>
+
+</details>
+
+<details>
+<summary>Production API Testing</summary>
+<br>
+
+</details>
 
 ## ⚙️ JavaScript Functional Testing
 
@@ -160,7 +234,7 @@ LingoLink was tested across both local and cloud-hosted environments using envir
     MONGO_URI = [MongoDB Atlas connection string]
     SECRET_KEY = "your_secret_key"
     ```
-![render-web-service-production](/resources/images/render-lingolink-production.png)
+![Render Web Service Production](/resources/images/render-lingolink-production.png)
 - Final live API URL:
   ```bash
   https://lingolink-0jc6.onrender.com
@@ -169,7 +243,7 @@ LingoLink was tested across both local and cloud-hosted environments using envir
 
 ### 🌐 Render Deployment (Frontend - Test Web Service)
 - A temporary Render web service was deployed to test frontend cloud hosting.
-![render-web-service-testing](/resources/images/render-lingolink-testing.png)
+![Render Web Service Testing](/resources/images/render-lingolink-testing.png)
 - Testing API URL:
   ```bash
   https://lingolink-testing.onrender.com

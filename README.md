@@ -29,10 +29,10 @@
   - [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
   - [Data Model](#data-model)
 
-- [Finished Product](#-finished-product)
 - [Deployment](#-deployment)
-- [Testing Documentation](TESTING.md)
+- [Finished Product](#-finished-product)
 - [Author and Contact](#-author-and-contact)
+- [Testing Documentation](TESTING.md)
 
 ## 🧠 User Experience (UX)
 
@@ -156,39 +156,35 @@ Here are features planned for future versions of LingoLink:
 - [Postman](https://www.postman.com/) – Manual API testing
 - [dotenv](https://pypi.org/project/python-dotenv/) – Manage environment variables
 
-### Data Model
+## 🗂️ Database Structure
 
-Each word in the MongoDB collection follows this structure:
+LingoLink uses MongoDB Atlas, a cloud-based NoSQL database, where each vocabulary entry is stored as a self-contained document. While NoSQL databases do not follow traditional relational database structures, the application’s data model mirrors a one-to-one structure.
 
+#### 📄 Document Example
 ```json
 {
-  "word": "Hello",
-  "language": "English",
-  "pronunciation": "heh-lo",
+  "_id": "ObjectId",
+  "word": "Labas",
+  "language": "Lithuanian",
+  "pronunciation": "Lah-bahs",
   "category": "Greeting",
   "translations": {
-    "Lithuanian": "Labas",
-    "French": "Bonjour"
+    "English": "Hello",
+    "Spanish": "Hola"
   }
 }
 ```
 
+### ✅ Design Justification
+- All metadata and translations for a word are bundled in a single document.
+- Eliminates the need for complex joins or foreign key references.
+- Fast to retrieve, edit, and delete entries in a single call.
+- Well-suited to MongoDB’s document-based data model.
+
+This allows for rapid CRUD operations while preserving data clarity and simplicity.
+
 - All fields are required and at least one `translation` must be added.
 - `translations` is a key-value object where each key is a language name and the value is its corresponding translation.
-
----
-
-## ✅ Finished Product
-
-The final product provides all the required CRUD functionality, featuring:
-
-- A mobile-first layout for easy accessibility
-- Smooth UI transitions and modals for editing
-- Multi-translation word entries
-- Persistent storage via a MongoDB database
-- Instant updates to the word catalogue via a JavaScript frontend
-
-Users can create, view, update, and delete word entries, including support for categories and pronunciation. The project meets all core requirements for a backend-focused application using a NoSQL database.
 
 ---
 
@@ -223,10 +219,6 @@ git clone https://github.com/TylerRTDev/CI-MSProject3.git
 2. **Navigate to the backend folder**
 ```bash
 cd CI-MSProject3
-```
-
-```bash
-cd backend
 ```
 3. **Create and activate a virtual environment**
 ```bash
@@ -342,6 +334,21 @@ SECRET_KEY="your_secret_key"
 ```
 
 You’re now ready to connect your backend (Flask) to MongoDB Atlas securely!
+
+---
+
+## ✅ Finished Product
+
+The final product provides all the required CRUD functionality, featuring:
+
+- A mobile-first layout for easy accessibility
+- Smooth UI transitions and modals for editing
+- Multi-translation word entries
+- Persistent storage via a MongoDB database
+- Instant updates to the word catalogue via a JavaScript frontend
+
+Users can create, view, update, and delete word entries, including support for categories and pronunciation. The project meets all core requirements for a backend-focused application using a NoSQL database.
+
 
 ## 👤 Author and Contact
 
