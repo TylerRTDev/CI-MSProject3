@@ -1,4 +1,20 @@
-# Testing Documentation
+# LingoLink Testing Documentation
+
+## 🧪 Testing Strategy Overview
+
+The LingoLink application was tested using a combination of manual testing and external tools throughout the development lifecycle.
+
+- **Manual Testing** was conducted across multiple devices, screen sizes, and browsers to ensure mobile-first responsiveness and core feature functionality.
+- **Browser Developer Tools** were used to emulate mobile devices and inspect layout rendering and CSS responsiveness.
+- **Form Validation** was tested by submitting empty fields and invalid data (e.g., missing translations).
+- **API Testing** was performed using [Postman](https://www.postman.com/) to verify all CRUD endpoints in the Flask backend.
+- **Code Quality Validation** tools were used:
+  - HTML via [W3C Validator](https://validator.w3.org/)
+  - CSS via [Jigsaw](https://jigsaw.w3.org/css-validator/)
+  - JavaScript via [JSHint](https://jshint.com/)
+  - Python via [flake8](https://flake8.pycqa.org/)
+- **Version control** was tracked via Git with regular commits during feature updates and testing cycles.
+
 
 ## Testing User Stories
 
