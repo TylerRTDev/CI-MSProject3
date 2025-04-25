@@ -1,6 +1,5 @@
 const API_BASE = "https://lingolink-0jc6.onrender.com";
 
-
 // Fetch words from the Flask API and display them
 async function loadWords() {
     try {
@@ -11,21 +10,17 @@ async function loadWords() {
         const wordSection = document.createElement("div");
         wordSection.classList.add("word-cards");
 
-        const translations = Object.entries(word.translations || {});
-        const [mainLang, mainTrans] = translations[0] || [];
-        const otherTranslations = translations.slice(1);
-
         words.forEach((word) => {
         const card = document.createElement("div");
         card.classList.add("word-card");
 
+        const translationsText = Object.entries(word.translations)
+            .map(([lang, trans]) => `${lang}: ${trans}`)
+            .join(" | ");
+
         card.innerHTML = `
             <h3>${word.word}</h3>
-            <div class="translations">
-            ${Object.entries(word.translations)
-                .map(([lang, trans]) => `${lang}: ${trans}`)
-                .join(" | ")}
-            </div>
+            <div class="translations">${translationsText}</div>
             <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
             <div class="actions">
             <button class="edit-btn" data-id="${word._id}">Edit</button>
@@ -49,7 +44,7 @@ if (e.target.classList.contains("delete-btn")) {
 
     try {
     const res = await fetch(`${API_BASE}/api/words/${id}`, {
-        method: "DELETE",
+        method: "DELETE"
     });
 
     if (res.ok) {
@@ -156,13 +151,6 @@ const res = await fetch(url, {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newWord),
     });
-
-
-    if (!res.ok) {
-    const error = await res.json();
-    alert("❌ Failed to add word: " + error.error);
-    return;
-    }
 
     const added = await res.json();
     alert("✅ Word added successfully!");

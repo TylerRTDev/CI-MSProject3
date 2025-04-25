@@ -66,6 +66,7 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
   ![404 Validator](/resources/images/css-404-validator.png)
 - **JavaScript**: Checked for syntax errors via browser console.
   - Result: No major issues or console warnings.
+  
 - **Python (Flask)**: Linted using `flake8`.
   - Result: No blocking errors or unused imports.
 
