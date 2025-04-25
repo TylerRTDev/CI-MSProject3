@@ -1,5 +1,13 @@
 # LingoLink Testing Documentation
 
+### Table of Contents
+
+- [Testing Stratergy Overview](#-testing-strategy-overview)
+- [Testing User Stories](#testing-user-stories)
+- [Tools Testing](#tools-testing)
+- [Manual Testing Matrix](#manual-testing-matrix)
+- [Deployment & Environment Testing](#-deployment--environment-testing)
+
 ## 🧪 Testing Strategy Overview
 
 The LingoLink application was tested using a combination of manual testing and external tools throughout the development lifecycle.
@@ -66,7 +74,7 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
   ![404 Validator](/resources/images/css-404-validator.png)
 - **JavaScript**: Checked for syntax errors via browser console.
   - Result: No major issues or console warnings.
-  
+
 - **Python (Flask)**: Linted using `flake8`.
   - Result: No blocking errors or unused imports.
 
@@ -119,56 +127,68 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 
 <details>
 <summary>Local API Testing</summary>
+
 <br>
 
+![GET Request Local](/resources/images/get-method-local.png)
 </details>
 
 <details>
 <summary>Production API Testing</summary>
 <br>
 
+![GET Request Prod](/resources/images/get-method-prod.png)
 </details>
 
 ### POST Method
 
 <details>
 <summary>Local API Testing</summary>
+
 <br>
 
+![POST Request Local](/resources/images/post-method-local.png)
 </details>
 
 <details>
 <summary>Production API Testing</summary>
 <br>
 
+![POST Request Prod](/resources/images/post-method-prod.png)
 </details>
 
 ### PUT Method
 
 <details>
 <summary>Local API Testing</summary>
+
 <br>
 
+![PUT Request Local](/resources/images/put-method-local.png)
 </details>
 
 <details>
 <summary>Production API Testing</summary>
 <br>
 
+![PUT Request Prod](/resources/images/put-method-prod.png)
 </details>
 
 ### DELETE Method
 
 <details>
 <summary>Local API Testing</summary>
+
 <br>
 
+![DELETE Request Local](/resources/images/delete-method-local.png)
 </details>
 
 <details>
 <summary>Production API Testing</summary>
 <br>
 
+![DELETE Request Prod](/resources/images/delete-method-prod.png)
 </details>
 
 ## ⚙️ JavaScript Functional Testing
