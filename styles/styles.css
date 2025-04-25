@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap');
 
 :root {
     --yellow: #fdd835;
@@ -12,42 +13,190 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    margin: 0;
+html, body {
     font-family: 'Alumni Sans', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--gray);
     color: var(--dark);
 }
 
-header {
-    background-color: var(--green);
+.global-overlay {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    z-index: -1; 
+}
+
+.shadow-overlay {
+    border-radius: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.889) 5%, rgba(255, 255, 255, 0.429) 80%), url('/resources/images/flag-3614861_1920.jpg') no-repeat center center/cover;
+    box-shadow: inset 0px 0px 10000px 10px rgb(0, 0, 0);
+    height: 75vh;
+    font-family: 'Alumni Sans', sans-serif;
+}
+
+.overlay {
+    padding-top: 5rem;
+    height: 100%;
+    padding: 1rem 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(to right, #255500 35%, #51BB00 96%);
+    margin: auto;
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: var(--white);
-    padding: 1.2rem;
-    text-align: center;
+    z-index: 999;
+    box-shadow: 0px 0px 90px 10px rgba(0, 0, 0, 0.696);
 }
 
-header h1 {
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    line-height: 1.2;
+    padding: 10px;
+}
+
+.logo-title {
+    font-size: 4.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    padding: 10px;
+}
+
+.logo-header {
+    font-family: 'Vampiro One', sans-serif;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    background: radial-gradient(ellipse at top left, #FFF700 46%, #51BB00 90%);
+    filter: drop-shadow(1px 10px 5px rgb(0, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-bold {
+    font-family: 'Vampiro One', sans-serif;
+    text-decoration: underline;
+    background: radial-gradient(ellipse at top left, #FFF700 46%, #51BB00 90%);
+    filter: drop-shadow(15px 10px 5px rgb(0, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    z-index: 1;
+}
+
+.tagline {
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin: 0;
-    font-size: 1.8rem;
-    font-family: "Boldonse"
+    color: black;
 }
 
-.landing {
-    padding: 2rem 1rem;
-    text-align: center;
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
-.landing h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--red);
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
 }
 
-.landing p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+.auth-buttons a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--white);
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+}
+
+.hero-content {
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 2rem;
+    border-left: solid black;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: black;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+.hero-content .highlight {
+    color: var(--yellow);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: black;
+}
+
+.hero-content .cta-btn {
+    background-color: var(--yellow);
+    color: var(--dark);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .cta-btn {
@@ -55,15 +204,22 @@ header h1 {
     border: none;
     padding: 1rem 2rem;
     font-size: 1rem;
+    letter-spacing: 2px;
     font-weight: bold;
     border-radius: 5px;
     color: var(--dark);
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 1rem;
+}
+
+.cta-btn:hover {
+    background-color: #ffb300;
 }
 
 .dashboard {
     padding: 1rem;
+    z-index: 1000;
 }
 
 .dashboard h2 {
@@ -79,28 +235,86 @@ header h1 {
     margin-bottom: 1rem;
 }
 
-#add-word-form {
+#add-word-form, #edit-word-form {
     background-color: var(--white);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    margin-bottom: 2rem;
-    
+    padding: 2rem;
+    border-left: 10px solid var(--green);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 2rem auto 3rem;
+    position: relative;
 }
 
-#add-word-form input {
+#add-word-form h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#add-word-form .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#add-word-form .form-header span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+#add-word-form label, #edit-word-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+#add-word-form input, #edit-word-form input[type="text"] {
     display: block;
     width: 100%;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     padding: 0.7rem;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+.translation-pair {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: baseline;
+    flex-wrap: nowrap;
+}
+
+.translation-pair input {
+    flex: 1;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fffde7;
+}
+
+
 #add-word-form .cta-btn {
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
+    background-color: var(--yellow);
+    color: var(--dark);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+#add-word-form .cta-btn:hover {
+    background-color: #ffb300;
 }
 
 #translations-wrapper {
@@ -120,11 +334,6 @@ header h1 {
     background-color: #fffde7;
     padding: 1rem;
     border-radius: 5px;
-}
-
-#edit-word-form {
-    background-color: var(--white);
-    padding: 1rem;
 }
 
 #edit-word-form input {
@@ -162,9 +371,7 @@ header h1 {
 
 /* Modal box */
 .modal-content {
-    background-color: #fff;
     margin: auto;
-    padding: 2rem;
     border-radius: 8px;
     width: 90%;
     max-width: 500px;
@@ -185,8 +392,8 @@ cursor: pointer;
 /* Modal actions button row */
 .modal-actions {
 display: flex;
-gap: 0.5rem;
-margin-top: 1rem;
+gap: 1rem;
+margin-top: 1.5rem;
 }
 
 .modal .cancel {
@@ -197,15 +404,53 @@ color: white;
 .word-card {
     background-color: var(--white);
     border-left: 6px solid var(--green);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.word-card:hover {
+    transform: scale(1.02);
 }
 
 .word-card h3 {
-    margin: 0;
+    margin: 0 0 0.3rem 0;
     color: var(--red);
+    font-weight: 900;
+    color: var(--dark);
+    display: inline-block;
+}
+
+.word-card .pronunciation {
+    font-size: 1.8rem;
+    color: var(--red);
+    font-weight: bold;
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+.word-card p {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+}
+
+.word-card .translations {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.word-card .translations span {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.word-card .translations span span {
+    color: var(--blue);
+    font-weight: bold;
 }
 
 .translations {
@@ -214,45 +459,47 @@ color: white;
     font-size: 0.95rem;
 }
 
-.translation-pair {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    align-items: center;
-}
-
-.translation-pair input {
-    flex: 1;
-}
-
-.remove-btn {
+.translation-pair .remove-btn {
     background-color: var(--red);
+    height: 100%;
+    display: flex;
+    align-items: center;
     color: white;
     border: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 3px;
+    padding: 0.3rem 0.5rem;
+    border-radius: 40px;
     cursor: pointer;
 }
 
 .actions {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .actions button {
+    flex: 1;
     margin-right: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.2rem;
     font-weight: bold;
+    font-size: 1rem;
     border: none;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.edit-btn {
+.actions .edit-btn {
     background-color: var(--yellow);
     color: var(--dark);
 }
 
-.delete-btn {
+.actions .open-btn {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.actions .delete-btn {
     background-color: var(--red);
     color: var(--white);
 }
@@ -275,6 +522,13 @@ footer {
     vertical-align: middle;
 }
 
+@media (min-width: 576px) {
+    .modal-content {
+        width: 85%;
+    }
+}
+
+/* Responsive Enhancements */
 @media(min-width: 768px) {
     .landing h1 {
     font-size: 2.5rem;
@@ -283,5 +537,27 @@ footer {
     .dashboard {
     max-width: 600px;
     margin: 0 auto;
+    }
+
+    .modal-content {
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px) {
+    .word-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .landing p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .landing h1 {
+        font-size: 3rem;
     }
 }

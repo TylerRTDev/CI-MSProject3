@@ -1,41 +1,40 @@
 const API_BASE = "https://lingolink-0jc6.onrender.com";
 
-
 // Fetch words from the Flask API and display them
 async function loadWords() {
-try {
-    const response = await fetch(`${API_BASE}/api/words`);
-    const words = await response.json();
+    try {
+        const response = await fetch(`${API_BASE}/api/words`);
+        const words = await response.json();
 
-    const dashboard = document.querySelector(".dashboard");
-    const wordSection = document.createElement("div");
-    wordSection.classList.add("word-cards");
+        const dashboard = document.querySelector(".dashboard");
+        const wordSection = document.createElement("div");
+        wordSection.classList.add("word-cards");
 
-    words.forEach((word) => {
-    const card = document.createElement("div");
-    card.classList.add("word-card");
+        words.forEach((word) => {
+        const card = document.createElement("div");
+        card.classList.add("word-card");
 
-    card.innerHTML = `
-        <h3>${word.word}</h3>
-        <div class="translations">
-        ${Object.entries(word.translations)
+        const translationsText = Object.entries(word.translations)
             .map(([lang, trans]) => `${lang}: ${trans}`)
-            .join(" | ")}
-        </div>
-        <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
-        <div class="actions">
-        <button class="edit-btn" data-id="${word._id}">Edit</button>
-        <button class="delete-btn" data-id="${word._id}">Delete</button>
-        </div>
-    `;
+            .join(" | ");
 
-    wordSection.appendChild(card);
-    });
+        card.innerHTML = `
+            <h3>${word.word}</h3>
+            <div class="translations">${translationsText}</div>
+            <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
+            <div class="actions">
+            <button class="edit-btn" data-id="${word._id}">Edit</button>
+            <button class="delete-btn" data-id="${word._id}">Delete</button>
+            </div>
+        `;
 
-    dashboard.appendChild(wordSection);
-} catch (error) {
-    console.error("Error loading words:", error);
-}
+        wordSection.appendChild(card);
+        });
+
+        dashboard.appendChild(wordSection);
+    } catch (error) {
+        console.error("Error loading words:", error);
+    }
 }
 
 // Handle delete button clicks
@@ -45,7 +44,7 @@ if (e.target.classList.contains("delete-btn")) {
 
     try {
     const res = await fetch(`${API_BASE}/api/words/${id}`, {
-        method: "DELETE",
+        method: "DELETE"
     });
 
     if (res.ok) {
@@ -84,7 +83,7 @@ document.addEventListener("click", function (e) {
             div.innerHTML = `
             <input type="text" class="lang" value="${lang}" required />
             <input type="text" class="trans" value="${trans}" required />
-            <button type="button" class="remove-btn">✖</button>
+            <button type="button" class="remove-btn">X</button>
             `;
 
             wrapper.appendChild(div);
@@ -141,7 +140,7 @@ const newWord = {
 };
 
 try {
-    const editId = document.getElementById("edit-id").value;
+    const editId = document.getElementById("edit-word-id").value;
     const method = editId ? "PUT" : "POST";
     const url = editId
     ? `${API_BASE}/api/words/${editId}`
@@ -153,13 +152,6 @@ const res = await fetch(url, {
     body: JSON.stringify(newWord),
     });
 
-
-    if (!res.ok) {
-    const error = await res.json();
-    alert("❌ Failed to add word: " + error.error);
-    return;
-    }
-
     const added = await res.json();
     alert("✅ Word added successfully!");
 
@@ -168,22 +160,26 @@ const res = await fetch(url, {
 
 } catch (error) {
     console.error("Error adding word:", error);
-}
+    alert("❌ Failed to add word.");
+    }
 });
 
-function addTranslationField() {
-    const wrapper = document.getElementById("translations-wrapper");
+function addTranslationField(lang = "", trans = "", target = "add") {
+    const wrapperId = target === "edit" ? "edit-translations-wrapper" : "translations-wrapper";
+    const wrapper = document.getElementById(wrapperId);
+
     const div = document.createElement("div");
     div.classList.add("translation-pair");
 
-div.innerHTML = `
-    <input type="text" class="lang" placeholder="Language (e.g. French)" required />
-    <input type="text" class="trans" placeholder="Translation (e.g. Bonjour)" required />
-    <button type="button" class="remove-btn">✖</button>
-`;
+    div.innerHTML = `
+        <input type="text" class="lang" value="${lang}" placeholder="Language" required />
+        <input type="text" class="trans" value="${trans}" placeholder="Translation" required />
+        <button type="button" class="remove-btn" onclick="this.parentElement.remove()">X</button>
+    `;
 
-wrapper.appendChild(div);
+    wrapper.appendChild(div);
 }
+
 
 // Open modal and populate fields
 document.addEventListener("click", function (e) {
@@ -212,12 +208,18 @@ document.addEventListener("click", function (e) {
     }
 });
 
-
+// Close modal when clicking outside of it
 function closeEditModal() {
     document.getElementById("edit-modal").style.display = "none";
     document.getElementById("edit-word-form").reset();
     document.getElementById("edit-translations-wrapper").innerHTML = "";
     document.getElementById("edit-word-id").value = "";
+    document.getElementById("add-word-form").reset();
+    document.getElementById("translations-wrapper").innerHTML = "";
+
+    const addWrapper = document.getElementById("translations-wrapper");
+    addWrapper.innerHTML = "";
+    addTranslationField();
 }
 
 function addEditTranslationField(lang = "", trans = "") {

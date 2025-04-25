@@ -109,6 +109,7 @@ def update_word(word_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+# Route: Update a batch(multiple) of words from MongoDB
 @app.route("/api/words/batch", methods=["POST"])
 def add_multiple_words():
     data = request.get_json()
@@ -121,4 +122,3 @@ def add_multiple_words():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
