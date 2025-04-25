@@ -75,7 +75,7 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 - **JavaScript**: Checked for syntax errors via browser console.
   - Result: No major issues or console warnings.
 
-- **Python (Flask)**: Linted using `flake8`.
+- **Python (Flask)**: Linted using `pep8`.
   - Result: No blocking errors or unused imports.
 
 ## Accessibility
@@ -123,7 +123,9 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 | Delete Word             | Click delete                      | Card disappears from list          | ✅     |
 | Load on Page Refresh    | Refresh page                      | Existing words are reloaded        | ✅     |
 
-### GET Method
+### Postman Testing
+
+#### GET Method
 
 <details>
 <summary>Local API Testing</summary>
@@ -140,7 +142,7 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 ![GET Request Prod](/resources/images/get-method-prod.png)
 </details>
 
-### POST Method
+#### POST Method
 
 <details>
 <summary>Local API Testing</summary>
@@ -157,7 +159,7 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 ![POST Request Prod](/resources/images/post-method-prod.png)
 </details>
 
-### PUT Method
+#### PUT Method
 
 <details>
 <summary>Local API Testing</summary>
@@ -174,7 +176,7 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 ![PUT Request Prod](/resources/images/put-method-prod.png)
 </details>
 
-### DELETE Method
+#### DELETE Method
 
 <details>
 <summary>Local API Testing</summary>
@@ -284,6 +286,3 @@ LingoLink was tested across both local and cloud-hosted environments using envir
 - Confirmed functionality across environments and network types (Wi-Fi, mobile data, incognito modes).
 
 ---
-
-
-

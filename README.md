@@ -1,5 +1,7 @@
 # LingoLink - Track & Learn Words Across Languages
 
+![Landing Page](/resources/images/landing-page.png)
+
 ## 🔗 Live Project
 
 - 🌍 Live Site: [https://tylerrtdev.github.io/CI-MSProject3/](https://tylerrtdev.github.io/CI-MSProject3/)
@@ -17,7 +19,7 @@
   - [User Value](#user-value)
   - [Color Scheme](#color-scheme)
   - [Typography](#typography)
-  - [Wireframes](#wireframes)
+  - [Wireframes/Design](#wireframes)
 
 - [Features](#-features)
   - [General](#general)
@@ -58,13 +60,32 @@ The goal of this project is to create a multilingual vocabulary tracker called *
 ### User Value
 
 - 📚 **Multi-language support** – Users can track and translate vocabulary across multiple languages, not just one-to-one translation.
+
+![Add New Word Form](/resources/images/multi-language-support.png)
+![Word Card](/resources/images/word-card-multi-language.png)
+
 - 🧠 **Pronunciation assistance** – Allows users to add pronunciation guides to help with accurate speech and memory retention.
+
+![Word Card](/resources/images/word-card-multi-language.png)
+
 - 🧩 **Smart translation entries** – Supports multiple translations for one word with flexible language pairs.
+
+![Word Card](/resources/images/word-card-multi-language.png)
+
 - 🔁 **Edit-friendly** – Users can easily update entries via a responsive modal system without refreshing the page.
-- 🎯 **Custom categories** – Helps learners group words into themes like Greetings, Food, Travel, etc.
+
+![Edit Form](/resources/images/edit-word-form.png)
+![Edited Word Card](/resources/images/edited-word-card.png)
+
 - 📱 **Mobile-first interface** – Designed with mobile responsiveness in mind for learning on the go.
 - 🚀 **Fast performance** – Instant UI feedback when adding, editing, or deleting words via JavaScript interactions.
+
+> [See Postman Testing For Response Times]()
+
 - ☁️ **Persistent cloud storage** – All words are saved securely in the cloud using MongoDB Atlas.
+
+![MongoDB Database](/resources/images/db-model.png)
+
 
 ---
 
@@ -89,15 +110,37 @@ The primary font used is:
 
 This typeface was selected for its clean readability, strong support across browsers, and familiarity in modern UIs.
 
-### Wireframes
+### Wireframes/Design
 
-Wireframes were created to plan the mobile-first layout and user interaction flow.
+Wireframes were created to plan the mobile-first layout and user interaction flow and 
 
 - Mobile wireframes focus on a vertical stacking structure, prioritising form inputs and large tap targets.
 - Desktop layouts make use of central alignment and spacing for easy readability.
 
 _ Wireframe screenshots will be added here in the final version._
 
+#### Wireframe Designs
+
+<details>
+<summary>Desktop and Tablet</summary>
+<br>
+
+</details>
+
+#### Figma Designs
+
+<details>
+<summary>Desktop and Tablet</summary>
+<br>
+
+![Hero Section](/resources/images/hero-section-design.png)
+
+![Add Word Form](/resources/images/add-word-form-design.png)
+
+![Edit Word Form](/resources/images/edit-word-form-design.png)
+
+![Word Card](/resources/images/word-card-design.png)
+</details>
 ---
 
 ## 🌟 Features
