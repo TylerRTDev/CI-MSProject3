@@ -611,10 +611,13 @@ footer {
 @media(max-width: 768px) {
     .title {
         flex-direction: column;
+        margin-top: 12rem;
     }
 
+
     .hero-content {
-    border-left: none;
+        border-left: none;
+        margin-top: 2rem;
     }
 
     .hero-content {
@@ -624,10 +627,18 @@ footer {
     
     .hero-content h1  {
         text-align: center;
+        font-size: 2.1rem;
     }
 
     .highlight {
         letter-spacing: 3px;
+        font-size: 2rem;
+    }
+
+    .hero-content p  {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        text-align: center;
     }
 }
 
@@ -646,6 +657,20 @@ footer {
 @media (min-width: 1024px) {
     .logo-title {
         padding-right: 20px;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
+
+    .hero-content h1  {
+        font-size: 1.9rem;
+    }
+
+    .highlight {
+        font-size: 1.9rem;
+        letter-spacing: 3px;
     }
 }
 
