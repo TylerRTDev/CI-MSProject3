@@ -249,11 +249,10 @@ html, body {
     letter-spacing: 3px;
     font-weight: 700;
     text-decoration: 1px underline;
+    text-align: center;
 }
 
 #add-word-form .form-header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
     flex-direction: column
@@ -332,6 +331,19 @@ html, body {
     margin-bottom: 1rem;
     font-weight: bold;
     color: var(--red);
+}
+
+.edit-form-header h3 {
+    font-size: 2.2rem;
+    text-align: center;
+    letter-spacing: 3px;
+    text-decoration: 1px underline;
+}
+
+.form-header {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: right;
 }
 
   /* When form is in edit mode */
