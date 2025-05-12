@@ -525,9 +525,13 @@ footer {
     word-break: break-word;
   }
 
+  .logo-bold {
+    margin-bottom: 1rem;
+}
+
   .tagline {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-weight: 700;
   }
 
   .hero-content {
