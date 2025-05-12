@@ -425,6 +425,11 @@ color: white;
     margin: 0.3rem 0;
 }
 
+.word-card-highlight {
+    color: var(--red);
+    letter-spacing: 3px;
+}
+
 .word-card .translations {
     margin-top: 0.5rem;
     padding-left: 1rem;
@@ -445,7 +450,8 @@ color: white;
 .translations {
     margin: 0.5rem 0;
     color: var(--dark);
-    font-size: 0.95rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .translation-pair .remove-btn {

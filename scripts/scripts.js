@@ -15,13 +15,13 @@ async function loadWords() {
         card.classList.add("word-card");
 
         const translationsText = Object.entries(word.translations)
-            .map(([lang, trans]) => `${lang}: ${trans}`)
-            .join(" | ");
+            .map(([lang, trans]) => `${lang}: '${trans}'`)
+            .join("  ¦  \r");
 
         card.innerHTML = `
-            <h3>${word.word}</h3>
+            <h1>${word.word} > <span class="word-card-highlight"><i>'${word.pronunciation}'</i></span></h1>
             <div class="translations">${translationsText}</div>
-            <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
+            <div class="translations">Pronunciation: '${word.pronunciation || "-"}'</div>
             <div class="actions">
             <button class="edit-btn" data-id="${word._id}">Edit</button>
             <button class="delete-btn" data-id="${word._id}">Delete</button>
