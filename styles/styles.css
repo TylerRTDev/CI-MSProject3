@@ -31,8 +31,8 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; 
-    z-index: -1000; 
+    overflow: hidden;
+    z-index: -100; 
 }
 
 .shadow-overlay {
@@ -50,7 +50,6 @@ html, body {
     box-shadow: inset 0px 0px 10000px 10px rgb(0, 0, 0);
     height: 75vh;
     font-family: 'Alumni Sans', sans-serif;
-    z-index: 100;
 }
 
 .overlay {
@@ -122,7 +121,7 @@ html, body {
     font-weight: 700;
     margin: 0;
     color: black;
-    text-decoration: underline;
+    text-decoration: 3px underline;
 }
 
 .auth-buttons {
@@ -212,13 +211,16 @@ html, body {
 
 .dashboard {
     padding: 1rem;
-    z-index: 1000;
 }
 
 .dashboard h2 {
     text-align: center;
     margin-bottom: 1rem;
-    color: var(--green);
+    color: var(--dark);
+    font-size: 3rem;
+    letter-spacing: 4px;
+    text-decoration: 1px underline;
+    font-weight: 700;
 }
 
 .dashboard h3 {
@@ -238,13 +240,15 @@ html, body {
     max-width: 800px;
     margin: 2rem auto 3rem;
     position: relative;
-    z-index: 1000;
 }
 
 #add-word-form h3 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-decoration: 1px underline;
 }
 
 #add-word-form .form-header {
@@ -252,10 +256,11 @@ html, body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    flex-direction: column
 }
 
 #add-word-form .form-header span {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--dark);
 }
@@ -312,6 +317,12 @@ html, body {
     background-color: #ffb300;
 }
 
+.form-label label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
 #translations-wrapper {
     margin-bottom: 1rem;
 }
@@ -354,7 +365,6 @@ html, body {
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
-    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -398,7 +408,7 @@ cursor: pointer;
 }
 
 .word-cards {
-    z-index: 1000;
+    margin: 1rem 2rem;
 }
 
 .word-card {
@@ -437,6 +447,7 @@ cursor: pointer;
 
 .word-card h1 {
     font-size: 2.5rem;
+    text-decoration: 1px underline;
 }
 
 .word-card-highlight {
