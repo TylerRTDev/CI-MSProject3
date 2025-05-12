@@ -16,12 +16,10 @@ async function loadWords() {
 
         const translationsText = Object.entries(word.translations)
             .map(([lang, trans]) => `${lang}: ${trans}`)
-            .join("  ¦  \r");
+            .join(" ¦ ");
 
         card.innerHTML = `
-            <div class="word-card-title">
             <h1>${word.word}<h1/><h3><span class="word-card-highlight"><i>${word.pronunciation}</i></span></h3>
-            <div/>
             <div class="translations">${translationsText}</div>
             <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
             <div class="actions">
@@ -74,7 +72,7 @@ document.addEventListener("click", function (e) {
         const translationText = card.querySelectorAll(".translations")[0].textContent;
 
         // Parse translations from text (e.g. Lithuanian: Labas | French: Bonjour)
-        const parts = translationText.split(" | ");
+        const parts = translationText.split(" ¦ ");
         parts.forEach((pair) => {
         const [lang, trans] = pair.split(": ");
         if (lang && trans) {
@@ -191,7 +189,7 @@ document.addEventListener("click", function (e) {
         const pronunciation = card.querySelectorAll(".translations")[1].textContent.replace("Pronunciation: ", "");
         const translationText = card.querySelectorAll(".translations")[0].textContent;
 
-        const parts = translationText.split(" | ");
+        const parts = translationText.split(" ¦ ");
         const translationsWrapper = document.getElementById("edit-translations-wrapper");
         translationsWrapper.innerHTML = "";
 
