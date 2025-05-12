@@ -68,8 +68,11 @@
               
                 <label>Translation of word*</label>
                 <div id="translations-wrapper"></div>
-                <button type="button" class="cta-btn" onclick="addTranslationField('', '', 'add')">+ Add Translation</button>
-                <button type="submit" class="cta-btn">+ Add Word</button>
+                <div class="cta-btn-wrapper">
+                    <button type="button" class="cta-btn" onclick="addTranslationField('', '', 'add')">+ Add Translation</button>
+                    <button type="submit" class="cta-btn">+ Add Word</button>
+                </div>
+                
               </form>
               
         </section>
@@ -97,7 +100,7 @@
                         <!-- Translation pairs dynamically added here -->
                     </div>
                     <button type="button" class="cta-btn" onclick="addEditTranslationField()">+ Add Translation</button>
-                    <div class="modal-actions">
+                    <div class="modal-actions cta-btn-wrapper">
                         <button type="submit" class="cta-btn">Update Word</button>
                         <button type="button" id="cancel-edit" class="cta-btn cancel">Cancel</button>
                     </div>
