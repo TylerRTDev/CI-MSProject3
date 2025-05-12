@@ -7,7 +7,7 @@
     --green: #388e3c;
     --red: #d32f2f;
     --white: #ffffff;
-    --dark: #212121;
+    --dark: #9a8a8a;
     --gray: #f5f5f5;
 }
 
@@ -45,7 +45,7 @@ html, body {
 
 .hero {
     position: relative;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.889) 5%, rgba(255, 255, 255, 0.429) 80%), url('../resources/images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.889) 5%, rgba(255, 255, 255, 0.429) 80%), url('../resources/images/translation-7774314_1920.jpg') no-repeat center center/cover;
     box-shadow: inset 0px 0px 10000px 10px rgb(0, 0, 0);
     height: 75vh;
     font-family: 'Alumni Sans', sans-serif;
@@ -196,12 +196,17 @@ html, body {
 }
 
 .cta-btn-wrapper {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cta-btn-wrapper .cta-btn {
+    flex: 1;
+    margin-right: 0;
 }
 
 .dashboard {
@@ -592,6 +597,12 @@ footer {
     }
 }
 
+@media(max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
 @media(min-width: 768px) {
 
     .landing h1 {
@@ -636,8 +647,10 @@ footer {
     }
 
     .hero-content p  {
+        padding-top: 1.2rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+        padding-bottom: 2rem;
         text-align: center;
     }
 }
