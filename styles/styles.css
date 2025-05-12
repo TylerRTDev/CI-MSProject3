@@ -116,11 +116,12 @@ html, body {
 }
 
 .tagline {
-    letter-spacing: 3.7px;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
     margin: 0;
     color: black;
+    text-decoration: underline;
 }
 
 .auth-buttons {
@@ -532,13 +533,13 @@ footer {
   }
 
   .logo-title {
-    font-size: 2.5rem;
     padding: 0.5rem;
     word-break: break-word;
   }
 
   .logo-bold {
     margin-bottom: 1rem;
+    font-size: 80%;
 }
 
   .tagline {
@@ -615,6 +616,30 @@ footer {
     .hero-content {
     border-left: none;
     }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5rem;
+    }
+    
+    .hero-content h1  {
+        font-size: 270%;
+        text-align: center;
+      }
+    
+    .hero-content span{
+            font-size: 100%;
+        }
+    
+    .hero-content p {
+            font-size: 150%;
+
+    }
+
+    .highlight {
+        letter-spacing: 3px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -655,6 +680,8 @@ footer {
   html {
     font-size: 17px;
   }
+  
+
 }
 
 @media (min-width: 1200px) {
