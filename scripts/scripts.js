@@ -15,13 +15,15 @@ async function loadWords() {
         card.classList.add("word-card");
 
         const translationsText = Object.entries(word.translations)
-            .map(([lang, trans]) => `${lang}: '${trans}'`)
+            .map(([lang, trans]) => `${lang}: ${trans}`)
             .join("  ¦  \r");
 
         card.innerHTML = `
-            <h1>${word.word} > <span class="word-card-highlight"><i>'${word.pronunciation}'</i></span></h1>
+            <div class="word-card-title">
+            <h1>${word.word}<h1/><h3><span class="word-card-highlight"><i>${word.pronunciation}</i></span></h3>
+            <div/>
             <div class="translations">${translationsText}</div>
-            <div class="translations">Pronunciation: '${word.pronunciation || "-"}'</div>
+            <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
             <div class="actions">
             <button class="edit-btn" data-id="${word._id}">Edit</button>
             <button class="delete-btn" data-id="${word._id}">Delete</button>
@@ -67,7 +69,7 @@ document.addEventListener("click", function (e) {
         const card = e.target.closest(".word-card");
 
         // Get word details from card
-        const word = card.querySelector("h3").textContent;
+        const word = card.querySelector("h1").textContent;
         const pronunciation = card.querySelectorAll(".translations")[1].textContent.replace("Pronunciation: ", "");
         const translationText = card.querySelectorAll(".translations")[0].textContent;
 
@@ -185,7 +187,7 @@ function addTranslationField(lang = "", trans = "", target = "add") {
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("edit-btn")) {
         const card = e.target.closest(".word-card");
-        const word = card.querySelector("h3").textContent;
+        const word = card.querySelector("h1").textContent;
         const pronunciation = card.querySelectorAll(".translations")[1].textContent.replace("Pronunciation: ", "");
         const translationText = card.querySelectorAll(".translations")[0].textContent;
 
