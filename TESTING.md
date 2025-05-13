@@ -247,6 +247,7 @@ LingoLink was tested across both local and cloud-hosted environments using envir
   const API_BASE = "http://127.0.0.1:5000";
   ```
 - Verified full CRUD operations using browser dev tools and Postman.
+[Postman Executions Here](#postman-testing)
 
 ### ☁️ Render Deployment (Backend API)
 - Backend hosted on Render:
@@ -263,6 +264,8 @@ LingoLink was tested across both local and cloud-hosted environments using envir
   https://lingolink-0jc6.onrender.com
   ```
 - CRUD routes validated using Postman and browser.
+[Postman Executions Here](#postman-testing)
+
 
 ### 🌐 Render Deployment (Frontend - Test Web Service)
 - A temporary Render web service was deployed to test frontend cloud hosting.
