@@ -28,7 +28,7 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    min-height: 200vh;
+    max-height: 200vh;
     width: 100vw;
     background-attachment: fixed;
     background-image: url('../resources/images/page-bg-img.png');
