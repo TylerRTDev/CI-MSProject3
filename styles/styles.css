@@ -46,6 +46,7 @@ html, body {
     height: 75vh;
     font-family: 'Alumni Sans', sans-serif;
     z-index: 1;
+    margin-top: -6rem;
 }
 
 .overlay {
@@ -61,11 +62,13 @@ html, body {
 
 .hero-header {
     position: sticky;
-    width: 100%;
+    width: 90%;
     top: 0;
     background: linear-gradient(to right, #255500 35%, #51BB00 96%);
     margin: auto;
+    margin-top: 2rem;
     padding: 0 5rem;
+    border-radius: 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
