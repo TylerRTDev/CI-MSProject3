@@ -25,11 +25,12 @@ html, body {
 }
 
 .background-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    min-height: 200vh;
     width: 100vw;
+    background-attachment: fixed;
     background-image: url('../resources/images/page-bg-img.png');
     background-size: cover;
     background-position: center;
@@ -671,6 +672,9 @@ footer {
         margin-top: 12rem;
     }
 
+    .tagline {
+        text-align: center;
+    }
 
     .hero-content {
         border-left: none;
