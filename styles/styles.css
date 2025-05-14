@@ -587,12 +587,10 @@ footer {
 .footer-text p {
     font-size: 1.2rem;
     color: var(--white);
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
-.footer-logo a {
-    margin-left: 3rem;
-    margin-right: 3rem;
-}
 
 .footer-h3 {
     margin-top: 1rem;
