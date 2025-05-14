@@ -580,7 +580,7 @@ footer {
 .footer-content {
     display: flex;
     align-items: center;
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
     justify-content: space-between
 
 
@@ -597,9 +597,11 @@ footer {
 }
 
 .footer-h3 {
+    margin-top: 1rem;
     font-size: 1.5rem;
     letter-spacing: 5px;
     color: var(--white);
+    text-align: center;
 }
 
 
