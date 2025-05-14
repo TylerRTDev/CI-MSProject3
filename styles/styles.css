@@ -586,9 +586,8 @@ footer {
 
 .footer-text p {
     font-size: 1.2rem;
+    letter-spacing: 2px;
     color: var(--white);
-    margin-left: 2rem;
-    margin-right: 2rem;
 }
 
 
