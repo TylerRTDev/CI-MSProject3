@@ -21,7 +21,6 @@ async function loadWords() {
         card.innerHTML = `
             <h1>${word.word}<h1/><h3><span class="word-card-highlight"><i>${word.pronunciation}</i></span></h3>
             <div class="translations">${translationsText}</div>
-            <div class="translations">Pronunciation: ${word.pronunciation || "-"}</div>
             <div class="actions">
             <button class="edit-btn" data-id="${word._id}">Edit</button>
             <button class="delete-btn" data-id="${word._id}">Delete</button>

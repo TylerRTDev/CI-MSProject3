@@ -36,6 +36,7 @@ html, body {
     background-repeat: no-repeat;
     z-index: -1000;
     pointer-events: none; /* So it doesn’t interfere with interactions */
+    opacity: 50%;
 }
 
 .hero {
@@ -63,7 +64,7 @@ html, body {
     position: sticky;
     width: 90%;
     top: 0;
-    background: linear-gradient(to right, #255500 35%, #51BB00 96%);
+    background: linear-gradient(to right, #255500c5 35%, #51bb00b6 96%);
     margin: auto;
     margin-top: 2rem;
     padding: 0 5rem;
@@ -116,11 +117,12 @@ html, body {
 
 .tagline {
     font-size: 2rem;
-    letter-spacing: 1.5px;
-    font-weight: 700;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-align: center;
     margin: 0;
-    color: black;
-    text-decoration: 3px underline;
+    color: var(--dark);
+    text-decoration: 2.5px underline;
 }
 
 .auth-buttons {
@@ -161,7 +163,6 @@ html, body {
     font-size: 1.2rem;
     letter-spacing: 1px;
     font-weight: 600;
-    color: rgb(255, 255, 255);
 }
 
 .hero-content .cta-btn {
@@ -173,6 +174,14 @@ html, body {
     text-decoration: none;
     display: inline-block;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hero-text {
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: #388e3c solid 10px;
+    box-shadow: 0px 0px 90px 10px rgba(0, 0, 0, 0.696);
+    background-color: rgb(255, 255, 255);
 }
 
 .cta-btn {
@@ -559,7 +568,11 @@ footer {
     background-color: var(--dark);
     color: var(--white);
     text-align: center;
+    border-radius: 10px;
     padding: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .social-icons a {
@@ -705,6 +718,8 @@ footer {
         padding-bottom: 2rem;
         text-align: center;
     }
+
+
 }
 
 @media (min-width: 992px) {
