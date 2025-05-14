@@ -67,7 +67,6 @@ document.addEventListener("click", function (e) {
 
         // Get word details from card
         const word = card.querySelector("h1").textContent;
-        const pronunciation = card.querySelectorAll(".translations")[1].textContent.replace("Pronunciation: ", "");
         const translationText = card.querySelectorAll(".translations")[0].textContent;
 
         // Parse translations from text (e.g. Lithuanian: Labas | French: Bonjour)
@@ -185,7 +184,6 @@ document.addEventListener("click", function (e) {
     if (e.target.classList.contains("edit-btn")) {
         const card = e.target.closest(".word-card");
         const word = card.querySelector("h1").textContent;
-        const pronunciation = card.querySelectorAll(".translations")[1].textContent.replace("Pronunciation: ", "");
         const translationText = card.querySelectorAll(".translations")[0].textContent;
 
         const parts = translationText.split(" ¦ ");
@@ -200,7 +198,6 @@ document.addEventListener("click", function (e) {
         });
 
         document.getElementById("edit-word").value = word;
-        document.getElementById("edit-pronunciation").value = pronunciation;
         document.getElementById("edit-word-id").value = e.target.getAttribute("data-id");
 
         document.getElementById("edit-modal").style.display = "block";
@@ -250,7 +247,6 @@ function handleEditSubmit(event) {
     const word = document.getElementById("edit-word").value.trim();
     const language = document.getElementById("edit-language").value.trim();
     const pronunciation = document.getElementById("edit-pronunciation").value.trim();
-    const category = document.getElementById("edit-category").value.trim();
 
     let translations = {};
     const langInputs = document.querySelectorAll("#edit-translations-wrapper .lang");

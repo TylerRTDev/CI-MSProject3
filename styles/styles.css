@@ -113,6 +113,7 @@ html, body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     z-index: 1;
+    text-align: center;
 }
 
 .tagline {
@@ -123,6 +124,7 @@ html, body {
     margin: 0;
     color: var(--dark);
     text-decoration: 2.5px underline;
+    text-decoration-color: var(--dark);
 }
 
 .auth-buttons {
@@ -179,7 +181,7 @@ html, body {
 .hero-text {
     padding: 1.5rem;
     border-radius: 10px;
-    border-left: #388e3c solid 10px;
+    border-left: #388e3c solid 7px;
     box-shadow: 0px 0px 90px 10px rgba(0, 0, 0, 0.696);
     background-color: rgb(255, 255, 255);
 }
@@ -218,7 +220,7 @@ html, body {
 }
 
 .dashboard-header {
-    border-left: 10px solid var(--green);
+    border-left: 7px solid var(--green);
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     max-width: 800px;
@@ -260,7 +262,7 @@ html, body {
 #add-word-form, #edit-word-form {
     background-color: var(--white);
     padding: 2rem;
-    border-left: 10px solid var(--green);
+    border-left: 7px solid var(--green);
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     max-width: 800px;
@@ -271,7 +273,7 @@ html, body {
 #add-word-form h3 {
     font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     letter-spacing: 3px;
     font-weight: 700;
     text-decoration: 1px underline;
@@ -565,7 +567,7 @@ cursor: pointer;
 }
 
 footer {
-    background-color: var(--dark);
+    background-color: #0000008f;
     color: var(--white);
     text-align: center;
     border-radius: 10px;
@@ -573,6 +575,26 @@ footer {
     width: 90%;
     margin: 0 auto;
     margin-bottom: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between
+
+
+}
+
+.footer-text p {
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-icons a {
@@ -644,6 +666,15 @@ footer {
         font-size: 1.7rem;
     }
 
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        margin: 1rem 0;
+    }
+
 }
 
 
@@ -663,6 +694,9 @@ footer {
     .hero-content h1 {
         font-size: 1.8rem;
     }
+
+    .footer-content {
+    }
 }
 
 @media(min-width: 768px) {
@@ -679,6 +713,8 @@ footer {
     .modal-content {
         width: 70%;
     }
+
+
 }
 
 @media(max-width: 768px) {
@@ -741,7 +777,7 @@ footer {
 
     .tagline {
         font-size: 1.5rem;
-        letter-spacing: 4px;
+        letter-spacing: 3px;
     }
 
     .hero-content h1  {
@@ -751,6 +787,14 @@ footer {
     .highlight {
         font-size: 1.9rem;
         letter-spacing: 3px;
+    }
+
+    .footer-content {
+
+    }
+
+    .social-icons {
+        margin: 1rem;
     }
 }
 
