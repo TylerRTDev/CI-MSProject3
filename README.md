@@ -1,11 +1,10 @@
 # LingoLink - Track & Learn Words Across Languages
 
-![Landing Page](/resources/images/landing-page.png)
+![Landing Page](./resources/images/landing-page.png)
 
 ## 🔗 Live Project
 
 - 🌍 Live Site: [https://tylerrtdev.github.io/CI-MSProject3/](https://tylerrtdev.github.io/CI-MSProject3/)
-- 💾 Backend API: [https://lingolink-0jc6.onrender.com](https://lingolink-0jc6.onrender.com)
 - 💻 GitHub Repo: [TylerRTDev/CI-MSProject3](https://github.com/TylerRTDev/CI-MSProject3)
 
 ---
@@ -61,23 +60,30 @@ The goal of this project is to create a multilingual vocabulary tracker called *
 
 - 📚 **Multi-language support** – Users can track and translate vocabulary across multiple languages, not just one-to-one translation.
 
-![Add New Word Form](/resources/images/multi-language-support.png)
-![Word Card](/resources/images/word-card-multi-language.png)
+![Add New Word Form](./resources/images/add-new-word-form.png)
+![Word Card](./resources/images/new-word-card.png)
 
 - 🧠 **Pronunciation assistance** – Allows users to add pronunciation guides to help with accurate speech and memory retention.
 
-![Word Card](/resources/images/word-card-multi-language.png)
+![Word Pronunciaton](./resources/images/word-pronunciation.png)
+![Word Card](./resources/images/new-word-card.png)
+
 
 - 🧩 **Smart translation entries** – Supports multiple translations for one word with flexible language pairs.
 
-![Word Card](/resources/images/word-card-multi-language.png)
+![Translation](./resources/images/language-translation.png)
+![Word Card](./resources/images/new-word-card.png)
+
 
 - 🔁 **Edit-friendly** – Users can easily update entries via a responsive modal system without refreshing the page.
 
-![Edit Form](/resources/images/edit-word-form.png)
-![Edited Word Card](/resources/images/edited-word-card.png)
+![Edit Form](./resources/images/edit-word-form.png)
+![Edit Form](./resources/images/edited-word-card.png)
 
 - 📱 **Mobile-first interface** – Designed with mobile responsiveness in mind for learning on the go.
+
+![Mobile UI](./resources/images/mobile-ui.png)
+
 - 🚀 **Fast performance** – Instant UI feedback when adding, editing, or deleting words via JavaScript interactions.
 
 > [See Postman Testing For Response Times](/TESTING.md)
@@ -122,7 +128,7 @@ _ Wireframe screenshots will be added here in the final version._
 #### Wireframe Designs
 
 <details>
-<summary>Desktop and Tablet</summary>
+<summary>Mobile, Tablet & Desktop</summary>
 <br>
 
 </details>
@@ -130,9 +136,16 @@ _ Wireframe screenshots will be added here in the final version._
 #### Figma Designs
 
 <details>
-<summary>Desktop and Tablet</summary>
+<summary>Mobile, Tablet & Desktop</summary>
 <br>
 
+490px
+![Mobile Hero Section](./resources/images/mobile-hero-section.png)
+
+1024px
+![Tablet Hero Section](./resources/images/tablet-hero-section.png)
+
+1920px
 ![Hero Section](/resources/images/hero-section-design.png)
 
 ![Add Word Form](/resources/images/add-word-form-design.png)
