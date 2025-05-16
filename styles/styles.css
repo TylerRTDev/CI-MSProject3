@@ -567,7 +567,7 @@ cursor: pointer;
 }
 
 footer {
-    background-color: #0000008f;
+    background-color: hwb(0 18% 17% / 0.561);
     color: var(--white);
     text-align: center;
     border-radius: 10px;
@@ -809,7 +809,7 @@ footer {
     }
 
     .footer-content {
-
+        flex-direction: column;
     }
 
     .social-icons {
