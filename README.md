@@ -123,13 +123,22 @@ Wireframes were created to plan the mobile-first layout and user interaction flo
 - Mobile wireframes focus on a vertical stacking structure, prioritising form inputs and large tap targets.
 - Desktop layouts make use of central alignment and spacing for easy readability.
 
-_ Wireframe screenshots will be added here in the final version._
-
 #### Wireframe Designs
 
 <details>
-<summary>Mobile, Tablet & Desktop</summary>
+<summary>Skeleton</summary>
 <br>
+
+Hero Section
+![Mobile Hero Section](./resources/images/hero-section-wireframe.png)
+
+Forms
+![Add & Edit Forms](./resources/images/add-form-wireframe.png)
+
+![Add & Edit Forms](./resources/images/edit-form-wireframe.png)
+
+Word Cards
+![Word Card Designs](./resources/images/word-card-wireframe.png)
 
 </details>
 
