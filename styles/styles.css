@@ -41,8 +41,8 @@ html, body {
 .hero {
     position: relative;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.43) 5%, rgba(255, 255, 255, 0.429) 80%), url('../resources/images/hero-bg.webp') no-repeat center center/cover;
-    box-shadow: inset 0px 0px 100px 5px rgb(0, 0, 0);
     height: 75vh;
+    box-shadow: inset 0px 0px 100px 5px rgb(0, 0, 0);
     font-family: 'Alumni Sans', sans-serif;
     z-index: 1;
     margin-top: -6rem;

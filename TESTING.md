@@ -96,6 +96,9 @@ Only **stylistic warnings** remain, such as the use of `let` in `for` loops, whi
 - All buttons are keyboard accessible.
 - Modal supports keyboard escape functionality.
 
+![Google Lighthouse](./resources/images/google-lighthouse-desktop.png)
+
+
 ## Tools Testing
 
 | Tool            | Purpose                          | Status  |
@@ -104,6 +107,7 @@ Only **stylistic warnings** remain, such as the use of `let` in `for` loops, whi
 | MongoDB Atlas  | Cloud database integration check | ✅ Passed |
 | GitHub Pages   | Frontend deployment              | ✅ Passed |
 | Render.com     | Backend deployment               | ✅ Passed |
+| Google Lighthouse| Analyse web app/page quality       | ✅ Passed |
 
 ### Postman Collection
 
