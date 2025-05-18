@@ -18,6 +18,7 @@ mongo = PyMongo(app)
 # Load environment variables from .env
 load_dotenv()
 
+
 # Helper: Format MongoDB documents for JSON
 def format_word(doc):
     return {
@@ -28,12 +29,14 @@ def format_word(doc):
         "pronunciation": doc.get("pronunciation")
     }
 
+
 # Route: Get all words from MongoDB
 @app.route("/api/words", methods=["GET"])
 def get_words():
     words_cursor = mongo.db.words.find()
     words = [format_word(word) for word in words_cursor]
     return jsonify(words), 200
+
 
 # Route: Add words from MongoDB
 @app.route("/api/words", methods=["POST"])
@@ -64,18 +67,19 @@ def add_word():
 
     return jsonify(new_word), 201
 
+
 # Route: Delete words from MongoDB
 @app.route("/api/words/<word_id>", methods=["DELETE"])
 def delete_word(word_id):
     try:
         result = mongo.db.words.delete_one({"_id": ObjectId(word_id)})
-        
-        if result.deleted_count == 0:
-            return jsonify({"error": "Word not found"}), 404
+    if result.deleted_count == 0:
+        return jsonify({"error": "Word not found"}), 404
 
         return jsonify({"message": "Word deleted successfully"}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
 
 # Route: Update words from MongoDB
 @app.route("/api/words/<word_id>", methods=["PUT"])
@@ -88,7 +92,8 @@ def update_word(word_id):
     update_fields = {}
 
     # Allow updates to any of these fields
-    for field in ["word", "language", "translations", "pronunciation", "category"]:
+    for field in
+    ["word", "language", "translations", "pronunciation", "category"]:
         if field in data:
             update_fields[field] = data[field]
 
@@ -109,6 +114,7 @@ def update_word(word_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+
 # Route: Update a batch(multiple) of words from MongoDB
 @app.route("/api/words/batch", methods=["POST"])
 def add_multiple_words():
@@ -117,7 +123,9 @@ def add_multiple_words():
         return jsonify({"error": "Expected a list of word objects"}), 400
 
     inserted = mongo.db.words.insert_many(data)
-    return jsonify({"inserted_ids": [str(_id) for _id in inserted.inserted_ids]}), 201
+    return jsonify({
+        "inserted_ids": [str(_id) for _id in inserted.inserted_ids]
+        }), 201
 
 
 if __name__ == "__main__":
