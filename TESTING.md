@@ -79,8 +79,14 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 
 Only **stylistic warnings** remain, such as the use of `let` in `for` loops, which are allowed in modern JavaScript and required for block scoping in dynamic DOM manipulation.
 
-- **Python (Flask)**: Linted using `pep8`.
+- **Python (Flask)**: Linted using [pycodestyle](https://pypi.org/project/pycodestyle/).
   - Result: No blocking errors or unused imports.
+  ![Python Validation](/resources/images/pycodestyle-validation.png)
+
+> ⚠️ Below is an example of an intentional error purposefully added to the `app.py` file to display how `pycodestyle` hightlights errors.
+
+  ![Python Validation](/resources/images/pycodestyle-validation-error.png)
+
 
 ## Accessibility
 
