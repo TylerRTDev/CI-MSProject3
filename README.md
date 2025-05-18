@@ -22,7 +22,7 @@
 
 - [Features](#-features)
   - [General](#general)
-  - [Landing Page](#landing-page)
+  - [Word Catalogue](#-word-catalogue)
   - [Future Enhancements](#-future-enhancements)
 
 - [Technologies Used](#-technologies-used)
@@ -173,14 +173,9 @@ LingoLink is a full-stack language learning tool that helps users add, manage, a
 - Add a new word with optional pronunciation and category
 - Add multiple translations for each word
 - Edit word entries via modal pop-up
-- Delete entries with confirmation handling
+- Delete entries via word cards
 - Form validation to ensure translations are always present
 - Responsive UI optimized for mobile and desktop
-
-### 🖼 Landing Page
-- Includes branding, tagline, and call-to-action
-- Gradient hero background and animated transitions
-- Sticky navigation bar with login/register buttons
 
 ### 📋 Word Catalogue
 - Displays all user-added words

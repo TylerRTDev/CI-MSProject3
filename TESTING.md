@@ -65,27 +65,31 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 ## Code Validation
 
 - **HTML**: Validated using [W3C Markup Validator](https://validator.w3.org/nu/).
+
   - Result: No critical errors found.
-  ![404 HTML Validator](resources/images/html-404-validator.png)
-  ![Index HTML Validator](resources/images/html-validator.png)
+
+![404 HTML Validator](resources/images/html-404-validator.png)
+![Index HTML Validator](resources/images/html-validator.png)
 - **CSS**: Validated using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
   - Result: All styling passed validation.
-  ![CSS Validator](/resources/images/css-validation.png)
-  ![404 Validator](/resources/images/css-404-validator.png)
+
+![CSS Validator](/resources/images/css-validation.png)
+![404 Validator](/resources/images/css-404-validator.png)
 - **JavaScript**: Validated using [JSLint](https://jslint.com/)
   - JSLint detected no functional or logic-based errors.
 
-  ![JSLint Validation](/resources/images/jslint-validator.png)
+![JSLint Validation](/resources/images/jslint-validator.png)
 
 Only **stylistic warnings** remain, such as the use of `let` in `for` loops, which are allowed in modern JavaScript and required for block scoping in dynamic DOM manipulation.
 
 - **Python (Flask)**: Linted using [pycodestyle](https://pypi.org/project/pycodestyle/).
-  - Result: No blocking errors or unused imports.
-  ![Python Validation](/resources/images/pycodestyle-validation.png)
+  - Result: No blocking errors or unused imports were detected.
 
-> ⚠️ Below is an example of an intentional error purposefully added to the `app.py` file to display how `pycodestyle` hightlights errors.
+![Python Validation](/resources/images/pycodestyle-validation.png)
 
-  ![Python Validation](/resources/images/pycodestyle-validation-error.png)
+> ⚠️ Below is an **EXAMPLE** of an intentional error purposefully added to the `app.py` file to display how `pycodestyle` hightlights errors and is **NO LONGER PRESENT** in the production version.
+
+![Python Validation](/resources/images/pycodestyle-validation-error.png)
 
 
 ## Accessibility
@@ -107,7 +111,7 @@ Only **stylistic warnings** remain, such as the use of `let` in `for` loops, whi
 | MongoDB Atlas  | Cloud database integration check | ✅ Passed |
 | GitHub Pages   | Frontend deployment              | ✅ Passed |
 | Render.com     | Backend deployment               | ✅ Passed |
-| Google Lighthouse| Analyse web app/page quality       | ✅ Passed |
+| Google Lighthouse| Analyse and report web app/page quality       | ✅ Passed |
 
 ### Postman Collection
 
