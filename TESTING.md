@@ -64,16 +64,20 @@ LingoLink was tested extensively across multiple devices and screen sizes to con
 
 ## Code Validation
 
-- **HTML**: Validated using W3C Markup Validator.
+- **HTML**: Validated using [W3C Markup Validator](https://validator.w3.org/nu/).
   - Result: No critical errors found.
   ![404 HTML Validator](resources/images/html-404-validator.png)
   ![Index HTML Validator](resources/images/html-validator.png)
-- **CSS**: Validated using W3C CSS Validator.
+- **CSS**: Validated using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
   - Result: All styling passed validation.
   ![CSS Validator](/resources/images/css-validation.png)
   ![404 Validator](/resources/images/css-404-validator.png)
-- **JavaScript**: Checked for syntax errors via browser console.
-  - Result: No major issues or console warnings.
+- **JavaScript**: Validated using [JSLint](https://jslint.com/)
+  - JSLint detected no functional or logic-based errors.
+
+  ![JSLint Validation](/resources/images/jslint-validator.png)
+
+Only **stylistic warnings** remain, such as the use of `let` in `for` loops, which are allowed in modern JavaScript and required for block scoping in dynamic DOM manipulation.
 
 - **Python (Flask)**: Linted using `pep8`.
   - Result: No blocking errors or unused imports.
