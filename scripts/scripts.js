@@ -98,9 +98,6 @@ document.addEventListener("click", function (e) {
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("remove-btn")) {
     e.target.closest(".translation-pair").remove();
-    if (pair) {
-        pair.remove();
-    }
 }
 });
 
