@@ -570,18 +570,15 @@ footer {
     background-color: hwb(0 18% 17% / 0.561);
     color: var(--white);
     text-align: center;
-    border-radius: 10px;
     padding: 1rem;
-    width: 90%;
     margin: 0 auto;
-    margin-bottom: 2rem;
 }
 
 .footer-content {
     display: flex;
     align-items: center;
     padding: 1rem;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .footer-text p {
@@ -660,7 +657,7 @@ footer {
 
     .logo-bold {
         margin-bottom: 1rem;
-        font-size: 4.3rem;
+        font-size: 4.2rem;
     }
 
     .hero-content h1  {
@@ -787,7 +784,7 @@ footer {
     }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
     .logo-title {
         padding-right: 20px;
     }
