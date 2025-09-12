@@ -19,7 +19,7 @@ The LingoLink application was tested using a combination of manual testing and e
 - **Code Quality Validation** tools were used:
   - HTML via [W3C Validator](https://validator.w3.org/)
   - CSS via [Jigsaw](https://jigsaw.w3.org/css-validator/)
-  - JavaScript via [JSHint](https://jshint.com/)
+  - JavaScript via [JSLint](https://jslint.com/)
   - Python via [flake8](https://flake8.pycqa.org/)
 - **Version control** was tracked via Git with regular commits during feature updates and testing cycles.
 
